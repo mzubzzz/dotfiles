@@ -1,7 +1,22 @@
-# .bash_aliases
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+ ## Get the env variables
+if [ -f ~/.profile ]; then
+    . ~/.profile
+fi
 
 # Specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
 PATH="$HOME/Repos/gitHub/mzubzzz/dotfiles/scripts:$PATH"
+
+export=PATH
 
 # use vi-style editing interface
 set -o vi
