@@ -25,8 +25,13 @@ set -o vi
 alias vi=vim
 
 # Functions
-repos() {
-    cd $HOME/Repos
+# Navigation
+processtech() {
+    cd $HOME/Repos/gitLab/processtech
+}
+
+dotfiles() {
+    cd $HOME/Repos/gitHub/mzubzzz/dotfiles
 }
 
 # Custom prompt.
