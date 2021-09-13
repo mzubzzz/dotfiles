@@ -30,7 +30,11 @@ processtech() {
     cd $HOME/Repos/gitLab/processtech
 }
 
-dotfiles() {
+data() {
+    cd /mnt/4a653e30-67ab-4d2d-8787-d4f2c3ec3742
+}
+
+dot() {
     cd $HOME/Repos/gitHub/mzubzzz/dotfiles
 }
 
