@@ -1,15 +1,28 @@
+#!/bin/bash
 # .bashrc
 
-# Source global definitions
-if [ -f /etc/bashrc ]; then
+# --------------- Source global definitions ---------------
+if test -f /etc/bashrc; then
 	. /etc/bashrc
 fi
- ## Get the env variables
-if [ -f ~/.profile ]; then
+# --------------- Get the system env variables ---------------
+# (.profile readed by all system not only bash)
+if test -f ~/.profile; then
     . ~/.profile
 fi
 
-# Specific environment
+# --------------- Shell env variables ---------------
+# variables for colorizing less pages
+export LESS_TERMCAP_mb=$'\e[35m' # magenta
+export LESS_TERMCAP_md=$'\e[33m' # yellow
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[34m' # blue
+export LESS_TERMCAP_ue=$' # "\e[0m'
+export LESS_TERMCAP_us=$'\e[4m'  # underline
+export GROFF_NO_SGR=1 # For Konsole and Gnome-terminal
+
+# --------------- Path setup ---------------
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
 then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
@@ -18,17 +31,26 @@ PATH="$HOME/Repos/gitHub/mzubzzz/dotfiles/scripts:$PATH"
 
 export=PATH
 
-# use vi-style editing interface
+# --------------- use vi-style editing interface ---------------
 set -o vi
 
-# Aliases
+# --------------- Aliases ---------------
 alias vi=vim
 
-# Functions
-# Navigation
+# --------------- Functions ---------------
+# --------------- Navigation ---------------
 processtech() {
     cd $HOME/Repos/gitLab/processtech
 }
+
+github() {
+    cd $HOME/Repos/gitHub
+}
+
+gitlab() {
+    cd $HOME/Repos/gitlab
+}
+
 
 data() {
     cd /mnt/4a653e30-67ab-4d2d-8787-d4f2c3ec3742
@@ -38,7 +60,7 @@ dot() {
     cd $HOME/Repos/gitHub/mzubzzz/dotfiles
 }
 
-# Custom prompt.
+# --------------- Custom prompt ---------------
 parse_git_branch() {
    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
