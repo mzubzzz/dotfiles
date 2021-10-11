@@ -6,3 +6,5 @@ ln -sf $PWD/vimrc $HOME/.vimrc
 ls -l $HOME/.vimrc
 ln -sf $PWD/profile $HOME/.profile
 ls -l $HOME/.profile
+ln -sf $PWD/dircolors $HOME/.dircolors
+ls -l $HOME/.dircolors
