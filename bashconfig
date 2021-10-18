@@ -61,20 +61,20 @@ processtech() {
 
 github() {
     cd $GITHUB
-}
+} && export -f github
 
 gitlab() {
     cd $GITLAB
-}
+} && export -f gitlab
 
 
 data() {
     cd $DATA
-}
+} && export -f data
 
 dot() {
     cd $DOT
-}
+} && export -f dot 
 
 # --------------- Custom prompt ---------------
 parse_git_branch() {
