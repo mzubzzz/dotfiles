@@ -1,0 +1,1 @@
+ ~/bin/wildfly/bin/standalone.sh --debug
