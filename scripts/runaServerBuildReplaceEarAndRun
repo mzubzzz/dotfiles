@@ -1,0 +1,21 @@
+#!/bin/sh
+
+ear_path=~/Repos/gitLab/processtech/runawfe-professional-server/wfe-ear/'${jboss.home.dir}'/standalone/deployments/runawfe.ear
+target_path=~/bin/wildfly/standalone/deployments/
+
+print_success() {
+    printf "++++++++++++++++++++++++++++++++++++++\n"
+    printf "+++EAR has been copied \e[32mSUCCESSFULLY\e[0m+++\n"
+    printf "++++++++++++++++++++++++++++++++++++++\n"
+}
+
+print_fail() {
+    printf "+++++++++++++++++++++++++++++++++++++\n"
+    printf "+++\e[31mFAIL\e[0m: EAR hasn't been copied +++\n"
+    printf "+++++++++++++++++++++++++++++++++++++\n"
+}
+
+
+cd $PROCESSTECH/runawfe-professional-server/wfe-app && mvn clean package -Dmaven.test.skip=true && cp "$ear_path" "$target_path" && print_success || print_fail
+
+~/bin/wildfly/bin/standalone.sh --debug
