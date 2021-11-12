@@ -13,11 +13,12 @@ print_fail() {
     printf "+++++++++++++++++++++++++++++++++++++\n"
     printf "+++\e[31mFAIL\e[0m: EAR hasn't been copied +++\n"
     printf "+++++++++++++++++++++++++++++++++++++\n"
+    exit 1
 }
 
 
-cd $PROCESSTECH/runawfe-professional-server/wfe-app &&\
-mvn clean package -Dmaven.test.skip=true &&\
-cp "$ear_path" "$target_path" &&\
-print_success || print_fail &&\
+cd $PROCESSTECH/runawfe-professional-server/wfe-app && \
+mvn clean package -Dmaven.test.skip=true && \
+cp "$ear_path" "$target_path" && \
+(print_success || print_fail) && \
 ~/bin/wildfly/bin/standalone.sh --debug

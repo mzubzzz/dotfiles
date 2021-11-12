@@ -12,6 +12,13 @@ if test -f ~/.profile; then
 fi
 
 # --------------- Shell env variables ---------------
+export DATA="/mnt/4a653e30-67ab-4d2d-8787-d4f2c3ec3742"
+export DOWNLOADS="/mnt/4a653e30-67ab-4d2d-8787-d4f2c3ec3742/Downloads"
+export DOT="$HOME/Repos/gitHub/mzubzzz/dotfiles"
+export PROCESSTECH="$HOME/Repos/gitLab/processtech"
+export GITHUB="$HOME/Repos/gitHub/mzubzzz"
+export GITLAB="$HOME/Repos/gitLab/mzubzzz"
+export SCRIPTS="$HOME/Repos/gitLab/mzubzzz/dotfiles/scripts"
 # variables for colorizing less pages
 export LESS_TERMCAP_mb=$'\e[35m' # magenta
 export LESS_TERMCAP_md=$'\e[33m' # yellow
@@ -21,11 +28,6 @@ export LESS_TERMCAP_so=$'\e[34m' # blue
 export LESS_TERMCAP_ue=$' # "\e[0m'
 export LESS_TERMCAP_us=$'\e[4m'  # underline
 export GROFF_NO_SGR=1 # For Konsole and Gnome-terminal
-export PROCESSTECH="$HOME/Repos/gitLab/processtech"
-export GITHUB="$HOME/Repos/gitHub"
-export GITLAB="$HOME/Repos/gitLab"
-export DATA="/mnt/4a653e30-67ab-4d2d-8787-d4f2c3ec3742"
-export DOT="$HOME/Repos/gitHub/mzubzzz/dotfiles"
 
 # --------------- Path setup ---------------
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
@@ -33,8 +35,11 @@ then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
 PATH="$HOME/Repos/gitHub/mzubzzz/dotfiles/scripts:$PATH"
-
 export=PATH
+
+CDPATH==.:$GITHUB:$PROCESSTECH
+export CDPATH
+
 
 # --------------- Dircolors ---------------
 if command -v dircolors &>/dev/null; then
@@ -55,26 +60,9 @@ alias ll="ls -l --color=auto"
 
 # --------------- Functions ---------------
 # --------------- Navigation ---------------
-processtech() {
-    cd $PROCESSTECH
-} && export -f processtech
-
-github() {
-    cd $GITHUB
-} && export -f github
-
-gitlab() {
-    cd $GITLAB
-} && export -f gitlab
-
-
 data() {
     cd $DATA
 } && export -f data
-
-dot() {
-    cd $DOT
-} && export -f dot 
 
 # --------------- Custom prompt ---------------
 parse_git_branch() {
