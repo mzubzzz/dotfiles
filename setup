@@ -8,3 +8,5 @@ ln -sf $PWD/profile $HOME/.profile
 ls -l $HOME/.profile
 ln -sf $PWD/dircolors $HOME/.dircolors
 ls -l $HOME/.dircolors
+ln -sf $PWD/tmux.conf $HOME/.tmux.conf
+ls -l $HOME/.tmux.conf
