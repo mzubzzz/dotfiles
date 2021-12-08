@@ -1,0 +1,35 @@
+#!/usr/bin/bash
+#set -x
+
+declare server="server"
+declare devstudio="devstudio"
+declare build="-b"
+declare copy="-c"
+declare start="-s"
+declare -a projects=("$server" "$devstudio")
+declare options=("$build" "$copy" "$start")
+
+show_options() {
+    for opt in ${options[@]};do
+        test ${opt:0:${#3}} = $3 && echo "$opt"
+    done
+    exit
+}
+
+main() {
+    if test -n "$COMP_LINE"; then
+        for project in ${projects[@]};do
+            test -n "$3" && test $project = $3 && show_options 
+        done
+        for project in ${projects[@]};do
+            test ${project:0:${#2}} = $2 && echo "$project"
+        done
+        exit
+    fi
+
+    if test $1 = "$server"; then
+        echo "SERVER"
+    fi
+}
+
+main "$@"
