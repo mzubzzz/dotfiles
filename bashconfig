@@ -20,6 +20,8 @@ export GITHUB="$HOME/Repos/gitHub/mzubzzz"
 export GITLAB="$HOME/Repos/gitLab/mzubzzz"
 export SCRIPTS="$HOME/Repos/gitLab/mzubzzz/dotfiles/scripts"
 export MYVIMRC="$HOME/.vimrc"
+# define man pages width
+export MANWIDTH=150
 # variables for colorizing less pages
 export LESS_TERMCAP_mb=$'\e[35m' # magenta
 export LESS_TERMCAP_md=$'\e[33m' # yellow
