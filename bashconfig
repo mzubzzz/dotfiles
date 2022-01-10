@@ -56,6 +56,12 @@ fi
 # --------------- use vi-style editing interface ---------------
 set -o vi
 
+# --------------- Set ups tmux starting with new terminal ---------------
+test -z "$TMUX" &&\
+    { tmux attach ||\
+        ((exec tmux new-session \; split-window -v \; select-pane -t 1 \;  split-window -h \; select-pane -t 3) &&\
+        exit;)}
+
 # --------------- Aliases ---------------
 alias vi=vim
 alias ls="ls -h --color=auto"
