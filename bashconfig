@@ -18,6 +18,8 @@ export DOT="$HOME/Repos/gitHub/mzubzzz/dotfiles"
 export PROCESSTECH="$HOME/Repos/gitLab/processtech"
 export GITHUB="$HOME/Repos/gitHub/mzubzzz"
 export GITLAB="$HOME/Repos/gitLab/mzubzzz"
+export SVN="$HOME/Repos/svn"
+export ADVALANGE="$HOME/Repos/svn/advalange"
 export SCRIPTS="$HOME/Repos/gitLab/mzubzzz/dotfiles/scripts"
 export MYVIMRC="$HOME/.vimrc"
 # define man pages width
@@ -38,10 +40,11 @@ then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
 export PATH="$HOME/Repos/gitHub/mzubzzz/dotfiles/scripts:$PATH"
+export PATH="$JAVA_HOME/bin:$PATH"
 # For Advalange project
 export PATH="/opt/apache-maven-3.8.4/bin:$PATH"
 
-CDPATH==.:$GITHUB:$PROCESSTECH
+CDPATH==.:$GITHUB:$PROCESSTECH:$ADVALANGE
 export CDPATH
 
 
