@@ -31,4 +31,5 @@ call plug#end()
 
 colorscheme gruvbox
 highlight clear SignColumn " must be after colorscheme. Removes color from most left sign column
+hi ColorColumn ctermbg=darkgrey guibg=darkgrey " changes color of the colorcolumn
 
