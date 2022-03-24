@@ -8,8 +8,9 @@ set nohlsearch
 set smartindent
 set incsearch
 set scrolloff=8
-set signcolumn=yes
-set colorcolumn=150
+set signcolumn=yes " set visible most left column
+set colorcolumn=150 " set visible line which marks N symbols line lenght
+highlight clear SignColumn
 "java proper syntax highlighting
 let java_highlight_java_lang_ids=1
 let java_highlight_functions="style"
@@ -24,6 +25,9 @@ call plug#begin()
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'gruvbox-community/gruvbox'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'neoclide/coc.nvim'
+Plug 'preservim/nerdtree'
 call plug#end()
 
 colorscheme gruvbox
