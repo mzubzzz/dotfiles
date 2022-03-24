@@ -10,7 +10,6 @@ set incsearch
 set scrolloff=8
 set signcolumn=yes " set visible most left column
 set colorcolumn=150 " set visible line which marks N symbols line lenght
-highlight clear SignColumn
 "java proper syntax highlighting
 let java_highlight_java_lang_ids=1
 let java_highlight_functions="style"
@@ -31,3 +30,5 @@ Plug 'preservim/nerdtree'
 call plug#end()
 
 colorscheme gruvbox
+highlight clear SignColumn " must be after colorscheme. Removes color from most left sign column
+
