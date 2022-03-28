@@ -33,3 +33,10 @@ colorscheme gruvbox
 highlight clear SignColumn " must be after colorscheme. Removes color from most left sign column
 hi ColorColumn ctermbg=darkgrey guibg=darkgrey " changes color of the colorcolumn
 
+" remapings
+
+" GoTo code navigation. (for Coc plugin)
+ nmap <silent> gd <Plug>(coc-definition)
+ nmap <silent> gy <Plug>(coc-type-definition)
+ nmap <silent> gi <Plug>(coc-implementation)
+ nmap <silent> gr <Plug>(coc-references)
