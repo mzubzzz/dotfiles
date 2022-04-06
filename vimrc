@@ -10,6 +10,8 @@ set incsearch
 set scrolloff=8
 set signcolumn=yes " set visible most left column
 set colorcolumn=150 " set visible line which marks N symbols line lenght
+set conceallevel=2 " to replace markdown representation of emphasize words
+set concealcursor=c " to replace markdown representation of emphasize words. Dosent conceal then cursor on the line 
 "java proper syntax highlighting
 let java_highlight_java_lang_ids=1
 let java_highlight_functions="style"
@@ -27,6 +29,8 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'neoclide/coc.nvim'
 Plug 'preservim/nerdtree'
+Plug 'godlygeek/tabular' " markdown highlighting
+Plug 'preservim/vim-markdown' " markdown highlighting
 call plug#end()
 
 colorscheme gruvbox
