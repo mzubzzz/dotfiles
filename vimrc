@@ -12,6 +12,7 @@ set signcolumn=yes " set visible most left column
 set colorcolumn=150 " set visible line which marks N symbols line lenght
 set conceallevel=2 " to replace markdown representation of emphasize words
 set concealcursor=c " to replace markdown representation of emphasize words. Dosent conceal then cursor on the line 
+set shell=/bin/bash\ -i " allows vim use system bash with all alises (this is what it for)
 "java proper syntax highlighting
 let java_highlight_java_lang_ids=1
 let java_highlight_functions="style"
