@@ -79,6 +79,7 @@ test -z "$TMUX" &&\
 alias vi=vim
 alias ls="ls -h --color=auto"
 alias ll="ls -l --color=auto"
+alias xclip="xclip -selection c" # allows copy text to the clipboard buffer
 
 # --------------- Functions ---------------
 # --------------- Navigation ---------------
