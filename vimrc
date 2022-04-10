@@ -11,8 +11,8 @@ set scrolloff=8
 set signcolumn=yes " set visible most left column
 set colorcolumn=150 " set visible line which marks N symbols line lenght
 "java proper syntax highlighting
-let java_highlight_java_lang_ids=1
-let java_highlight_functions="style"
+"let java_highlight_java_lang_ids=1
+"let java_highlight_functions="style"
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -21,12 +21,17 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin()
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'gruvbox-community/gruvbox'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'neoclide/coc.nvim'
-Plug 'preservim/nerdtree'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fzf first plugin
+Plug 'junegunn/fzf.vim' " fzf second plugin
+Plug 'gruvbox-community/gruvbox' " gruvbox colorscheme
+Plug 'HerringtonDarkholme/yats.vim' " react syntax highlight
+Plug 'pangloss/vim-javascript' " JS highlight
+Plug 'uiiaoo/java-syntax.vim' " Java highlight
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " COC
+let g:coc_global_extensions = [
+      \ 'coc-tsserver',
+      \ 'coc-java'
+  \ ]
 call plug#end()
 
 colorscheme gruvbox
