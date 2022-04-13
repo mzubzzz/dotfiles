@@ -13,6 +13,9 @@ set colorcolumn=150 " set visible line which marks N symbols line lenght
 set conceallevel=2 " to replace markdown representation of emphasize words
 set concealcursor=c " to replace markdown representation of emphasize words. Dosent conceal then cursor on the line 
 set shell=/bin/bash\ -i " allows vim use system bash with all alises (this is what it for)
+set list " show all whitespace characters
+set showbreak=↪ " sets up whitespace characters
+set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨,space:· " sets up whitespace characters
 " Use <c-space> to trigger completion. (COC)
 if has('nvim')
     inoremap <silent><expr> <c-space> coc#refresh()
@@ -47,6 +50,7 @@ call plug#end()
 colorscheme gruvbox
 highlight clear SignColumn " must be after colorscheme. Removes color from most left sign column
 hi ColorColumn ctermbg=darkgrey guibg=darkgrey " changes color of the colorcolumn
+hi SpecialKey ctermfg=grey guifg=grey70 " makes whitespace characters a bit dimmer
 
 " remapings
 
