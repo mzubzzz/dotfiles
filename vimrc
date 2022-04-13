@@ -33,6 +33,8 @@ Plug 'gruvbox-community/gruvbox' " gruvbox colorscheme
 Plug 'HerringtonDarkholme/yats.vim' " react syntax highlight
 Plug 'pangloss/vim-javascript' " JS highlight
 Plug 'uiiaoo/java-syntax.vim' " Java highlight
+Plug 'puremourning/vimspector' " debugger
+let g:vimspector_enable_mappings = 'HUMAN' " sets up default mapping in debag
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " COC
 let g:coc_global_extensions = [
       \ 'coc-tsserver',
