@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk
-JAVA_TOOL_OPTIONS="-javaagent:$HOME/bin/lombok.jar -Xbootclasspath/p:$HOME/bin/lombok.jar"
+#JAVA_TOOL_OPTIONS="-javaagent:$HOME/bin/lombok.jar -Xbootclasspath/p:$HOME/bin/lombok.jar"
 #JAVA_HOME=/usr/lib/jvm/java-11-openjdk
 JAVA_HOME=/usr/lib/jvm/zulu11.54.25-ca-jdk11.0.14.1-linux_x64
 

@@ -50,7 +50,7 @@ call plug#end()
 colorscheme gruvbox
 highlight clear SignColumn " must be after colorscheme. Removes color from most left sign column
 hi ColorColumn ctermbg=darkgrey guibg=darkgrey " changes color of the colorcolumn
-hi SpecialKey ctermfg=grey guifg=grey70 " makes whitespace characters a bit dimmer
+hi SpecialKey ctermfg=gray guifg=grey70 " makes whitespace characters a bit dimmer
 
 " remapings
 
