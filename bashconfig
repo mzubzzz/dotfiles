@@ -16,8 +16,8 @@ export DATA="/mnt/4a653e30-67ab-4d2d-8787-d4f2c3ec3742"
 export DOWNLOADS="/mnt/4a653e30-67ab-4d2d-8787-d4f2c3ec3742/Downloads"
 export DOT="$HOME/Repos/gitHub/mzubzzz/dotfiles"
 export PROCESSTECH="$HOME/Repos/gitLab/processtech"
-export GITHUB="$HOME/Repos/gitHub/mzubzzz"
-export GITLAB="$HOME/Repos/gitLab/mzubzzz"
+export GITHUB="$HOME/Repos/github/mzubzzz"
+export GITLAB="$HOME/Repos/gitlab/mzubzzz"
 export SVN="$HOME/Repos/svn"
 export ADVALANGE="$HOME/Repos/gitLab/advalange"
 export SCRIPTS="$HOME/Repos/gitLab/mzubzzz/dotfiles/scripts"
@@ -70,9 +70,10 @@ set -o vi
 # --------------- Set ups tmux starting with new terminal ---------------
 # It's good but terminal in IDE started this way.
 test -z "$TMUX" &&\
-{ tmux attach ||\
+    unset PROMPT_COMMAND &&\ # to avoid annoing '__vte_prompt_command()' error
+    { tmux attach ||\
 #    ((exec tmux new-session \; split-window -v \; select-pane -t 1 \;  split-window -h \; select-pane -t 3) &&\ #Will start without spliting
-    (exec tmux new-session &&\
+        (exec tmux new-session &&\
     exit;)}
 
 # --------------- Aliases ---------------
@@ -87,7 +88,7 @@ data() {
     cd $DATA
 } && export -f data
 
-# --------------- Custom prompt ---------------
+## --------------- Custom prompt ---------------
 parse_git_branch() {
    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
