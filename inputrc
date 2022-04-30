@@ -1,0 +1,1 @@
+set editing-mode vi #Allows use vi style control in a psql command line

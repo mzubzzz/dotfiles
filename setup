@@ -10,3 +10,5 @@ ln -sf $PWD/dircolors $HOME/.dircolors
 ls -l $HOME/.dircolors
 ln -sf $PWD/tmux.conf $HOME/.tmux.conf
 ls -l $HOME/.tmux.conf
+ln -sf $PWD/inputrc $HOME/.inputrc
+ls -l $HOME/.inputrc
