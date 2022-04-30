@@ -14,13 +14,14 @@ fi
 # --------------- Shell env variables ---------------
 export DATA="/mnt/4a653e30-67ab-4d2d-8787-d4f2c3ec3742"
 export DOWNLOADS="/mnt/4a653e30-67ab-4d2d-8787-d4f2c3ec3742/Downloads"
-export DOT="$HOME/Repos/gitHub/mzubzzz/dotfiles"
-export PROCESSTECH="$HOME/Repos/gitLab/processtech"
 export GITHUB="$HOME/Repos/github"
 export GITLAB="$HOME/Repos/gitlab"
+export MY_GITHUB="$GITHUB/mzubzzz"
+export DOT="$MY_GITHUB/dotfiles"
+export PROCESSTECH="$GITLAB/processtech"
 export SVN="$HOME/Repos/svn"
-export ADVALANGE="$HOME/Repos/gitLab/advalange"
-export SCRIPTS="$HOME/Repos/gitLab/mzubzzz/dotfiles/scripts"
+export ADVALANGE="$GITLAB/advalange"
+export SCRIPTS="$DOT/scripts"
 export MYVIMRC="$HOME/.vimrc"
 # define man pages width
 export MANWIDTH=150
@@ -51,7 +52,7 @@ export PATH="$JAVA_HOME/bin:$PATH"
 # For Advalange project
 export PATH="/opt/apache-maven-3.8.4/bin:$PATH"
 
-CDPATH==.:$GITHUB:$PROCESSTECH:$ADVALANGE
+CDPATH==.:$MY_GITHUB:$PROCESSTECH:$ADVALANGE
 export CDPATH
 
 
@@ -69,8 +70,8 @@ set -o vi
 
 # --------------- Set ups tmux starting with new terminal ---------------
 # It's good but terminal in IDE started this way.
+unset PROMPT_COMMAND  # to avoid annoing '__vte_prompt_command()' error
 test -z "$TMUX" &&\
-    unset PROMPT_COMMAND &&\ # to avoid annoing '__vte_prompt_command()' error
     { tmux attach ||\
 #    ((exec tmux new-session \; split-window -v \; select-pane -t 1 \;  split-window -h \; select-pane -t 3) &&\ #Will start without spliting
         (exec tmux new-session &&\
