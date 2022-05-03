@@ -47,7 +47,7 @@ if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
 then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
-export PATH="$HOME/Repos/gitHub/mzubzzz/dotfiles/scripts:$PATH"
+export PATH="$HOME/Repos/github/mzubzzz/dotfiles/scripts:$PATH"
 export PATH="$JAVA_HOME/bin:$PATH"
 # For Advalange project
 export PATH="/opt/apache-maven-3.8.4/bin:$PATH"
