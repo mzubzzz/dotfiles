@@ -12,6 +12,7 @@ if test -f ~/.profile; then
 fi
 
 # --------------- Shell env variables ---------------
+export EDITOR="/usr/bin/vim"
 export DATA="/mnt/4a653e30-67ab-4d2d-8787-d4f2c3ec3742"
 export DOWNLOADS="/mnt/4a653e30-67ab-4d2d-8787-d4f2c3ec3742/Downloads"
 export GITHUB="$HOME/Repos/github"
