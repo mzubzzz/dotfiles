@@ -2,17 +2,21 @@
 # .bashrc
 
 # --------------- Source global definitions ---------------
-if test -f /etc/bashrc; then
+if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 # --------------- Get the system env variables ---------------
 # (.profile readed by all system not only bash)
-if test -f ~/.profile; then
+if [ -f ~/.profile ]; then
     . ~/.profile
 fi
 
 # --------------- Shell env variables ---------------
-export EDITOR="/usr/bin/vim"
+if [ -f /usr/bin/vimxxx ]; then
+    export EDITOR="/usr/bin/vim"
+else
+    echo -e "\e[31mThere is no vim in the system\e[0m"
+fi
 export DATA="/mnt/4a653e30-67ab-4d2d-8787-d4f2c3ec3742"
 export DOWNLOADS="/mnt/4a653e30-67ab-4d2d-8787-d4f2c3ec3742/Downloads"
 export GITHUB="$HOME/Repos/github"
@@ -42,7 +46,6 @@ shopt -s histappend
 # After each command, save and reload history
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
-
 # --------------- Path setup ---------------
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
 then
@@ -59,7 +62,7 @@ export CDPATH
 
 # --------------- Dircolors ---------------
 if command -v dircolors &>/dev/null; then
-    if test -r "$HOME/.dircolors"; then
+    if [ -r "$HOME/.dircolors" ]; then
         eval "$(dircolors -b "$HOME/.dircolors")"
     else
         eval "$(dircolors -b)"
@@ -72,7 +75,7 @@ set -o vi
 # --------------- Set ups tmux starting with new terminal ---------------
 # It's good but terminal in IDE started this way.
 unset PROMPT_COMMAND  # to avoid annoing '__vte_prompt_command()' error
-test -z "$TMUX" &&\
+[ -z "$TMUX" ] &&\
     { tmux attach ||\
 #    ((exec tmux new-session \; split-window -v \; select-pane -t 1 \;  split-window -h \; select-pane -t 3) &&\ #Will start without spliting
         (exec tmux new-session &&\
