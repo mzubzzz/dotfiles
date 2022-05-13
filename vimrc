@@ -20,7 +20,7 @@ set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨,spac
 if has('nvim')
     inoremap <silent><expr> <c-space> coc#refresh()
 else
-    inoremap <silent><expr> <c-@> coc#refresh()
+
 endif
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -52,10 +52,15 @@ highlight clear SignColumn " must be after colorscheme. Removes color from most 
 hi ColorColumn ctermbg=darkgrey guibg=darkgrey " changes color of the colorcolumn
 hi SpecialKey ctermfg=gray guifg=grey70 " makes whitespace characters a bit dimmer
 
-" remapings
+" Remapings
+let mapleader = ","
 
 " GoTo code navigation. (for Coc plugin)
- nmap <silent> gd <Plug>(coc-definition)
- nmap <silent> gy <Plug>(coc-type-definition)
- nmap <silent> gi <Plug>(coc-implementation)
- nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+" FZF
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>g :GFiles<CR>
+nnoremap <leader>b :Buffers<CR>

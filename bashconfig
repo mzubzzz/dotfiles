@@ -12,7 +12,7 @@ if [ -f ~/.profile ]; then
 fi
 
 # --------------- Shell env variables ---------------
-if [ -f /usr/bin/vimxxx ]; then
+if [ -f /usr/bin/vim ]; then
     export EDITOR="/usr/bin/vim"
 else
     echo -e "\e[31mThere is no vim in the system\e[0m"
