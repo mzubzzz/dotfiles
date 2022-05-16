@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ear_path=~/Repos/gitLab/processtech/runawfe-professional-server/wfe-ear/'${jboss.home.dir}'/standalone/deployments/runawfe.ear
+ear_path=$PROCESSTECH/runawfe-professional-server/wfe-ear/'${jboss.home.dir}'/standalone/deployments/runawfe.ear
 target_path=~/bin/wildfly/standalone/deployments/
 
 print_success() {
