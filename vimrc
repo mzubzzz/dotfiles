@@ -45,6 +45,7 @@ let g:coc_global_extensions = [
   \ ]
 Plug 'godlygeek/tabular' " markdown highlighting
 Plug 'preservim/vim-markdown' " markdown highlighting
+let g:vim_markdown_folding_disabled = 1 " disable folding in markdown
 call plug#end()
 
 colorscheme gruvbox
