@@ -28,6 +28,7 @@ export SVN="$HOME/Repos/svn"
 export ADVALANGE="$GITLAB/advalange"
 export SCRIPTS="$DOT/scripts"
 export MYVIMRC="$HOME/.vimrc"
+export GOPATH="$HOME/go"
 # define man pages width
 export MANWIDTH=150
 # variables for colorizing less pages

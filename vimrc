@@ -38,11 +38,13 @@ Plug 'pangloss/vim-javascript' " JS highlight
 Plug 'uiiaoo/java-syntax.vim' " Java highlight
 Plug 'puremourning/vimspector' " debugger
 let g:vimspector_enable_mappings = 'HUMAN' " sets up default mapping in debag
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " COC
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install --frozen-lockfile'} " COC
 let g:coc_global_extensions = [
       \ 'coc-tsserver',
-      \ 'coc-java'
+      \ 'coc-java',
+      \ 'coc-go'
   \ ]
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'godlygeek/tabular' " markdown highlighting
 Plug 'preservim/vim-markdown' " markdown highlighting
 let g:vim_markdown_folding_disabled = 1 " disable folding in markdown
