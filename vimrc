@@ -42,9 +42,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install --frozen-loc
 let g:coc_global_extensions = [
       \ 'coc-tsserver',
       \ 'coc-java',
-      \ 'coc-go'
+      \ 'coc-go',
+      \ 'coc-angular'
   \ ]
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' } " go documentation access
 Plug 'godlygeek/tabular' " markdown highlighting
 Plug 'preservim/vim-markdown' " markdown highlighting
 let g:vim_markdown_folding_disabled = 1 " disable folding in markdown
@@ -63,6 +64,10 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+" Vim-go
+" mapping :GoDoc
+autocmd FileType go nmap <Leader>i <Plug>(go-doc)
+let g:go_auto_type_info = 1 "auto invokes :GoInfo
 " FZF
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>g :GFiles<CR>
