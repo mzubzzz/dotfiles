@@ -2,7 +2,7 @@ set number " turn on line numbers
 set number relativenumber " set numbers to be relative
 set tabstop=4
 set shiftwidth=4
-set expandtab
+set expandtab " changes tabs to spaces
 set smartindent
 set nohlsearch
 set smartindent
@@ -16,12 +16,11 @@ set shell=/bin/bash\ -i " allows vim use system bash with all alises (this is wh
 set list " show all whitespace characters
 set showbreak=↪ " sets up whitespace characters
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨,space:· " sets up whitespace characters
-" Use <c-space> to trigger completion. (COC)
-if has('nvim')
-    inoremap <silent><expr> <c-space> coc#refresh()
-else
+autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 " set 2 symbols for indent in *.ts files
+autocmd FileType typescriptreact setlocal shiftwidth=2 tabstop=2 " set 2 spaces for indent in *.tsx files
+autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2 " set 2 spaces for indent in *.jsx files
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 " set 2 spaces for indent in *.js files
 
-endif
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -58,6 +57,8 @@ hi SpecialKey ctermfg=gray guifg=grey70 " makes whitespace characters a bit dimm
 
 " Remapings
 let mapleader = ","
+" Remap keys for applying codeAction to the current buffer.
+ nmap <leader>ac  <Plug>(coc-codeaction)
 
 " GoTo code navigation. (for Coc plugin)
 nmap <silent> gd <Plug>(coc-definition)
