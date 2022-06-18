@@ -8,6 +8,8 @@ set nohlsearch
 set smartindent
 set incsearch
 set scrolloff=8
+set termguicolors " enabels termguicolors for color highlighting
+set background=dark
 set signcolumn=yes " set visible most left column
 set colorcolumn=150 " set visible line which marks N symbols line lenght
 set conceallevel=2 " to replace markdown representation of emphasize words
@@ -20,6 +22,9 @@ autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 " set 2 symbols for 
 autocmd FileType typescriptreact setlocal shiftwidth=2 tabstop=2 " set 2 spaces for indent in *.tsx files
 autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2 " set 2 spaces for indent in *.jsx files
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 " set 2 spaces for indent in *.js files
+
+packadd! matchit " allows use % on html/xml tags
+
 
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -48,6 +53,10 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' } " go documentation access
 Plug 'godlygeek/tabular' " markdown highlighting
 Plug 'preservim/vim-markdown' " markdown highlighting
 let g:vim_markdown_folding_disabled = 1 " disable folding in markdown
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' } " colors highlighting
+if (has("termguicolors"))
+    set termguicolors
+endif
 call plug#end()
 
 colorscheme gruvbox
