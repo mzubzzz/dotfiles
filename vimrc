@@ -47,13 +47,14 @@ let g:coc_global_extensions = [
       \ 'coc-tsserver',
       \ 'coc-java',
       \ 'coc-go',
-      \ 'coc-angular'
+      \ 'coc-angular',
+      \ 'coc-eslint'
   \ ]
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' } " go documentation access
 Plug 'godlygeek/tabular' " markdown highlighting
 Plug 'preservim/vim-markdown' " markdown highlighting
 let g:vim_markdown_folding_disabled = 1 " disable folding in markdown
-Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' } " colors highlighting
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' } " hex colors highlighting
 if (has("termguicolors"))
     set termguicolors
 endif
@@ -65,9 +66,14 @@ hi ColorColumn ctermbg=darkgrey guibg=darkgrey " changes color of the colorcolum
 hi SpecialKey ctermfg=gray guifg=grey70 " makes whitespace characters a bit dimmer
 
 " Remapings
+
 let mapleader = ","
 " Remap keys for applying codeAction to the current buffer.
- nmap <leader>ac  <Plug>(coc-codeaction)
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+" Autoplace closing bracket
+inoremap { {}<left>
 
 " GoTo code navigation. (for Coc plugin)
 nmap <silent> gd <Plug>(coc-definition)
