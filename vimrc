@@ -10,6 +10,7 @@ set incsearch
 set scrolloff=8
 set termguicolors " enabels termguicolors for color highlighting
 set background=dark
+set ignorecase " ingnore case while searching
 set signcolumn=yes " set visible most left column
 set colorcolumn=150 " set visible line which marks N symbols line lenght
 set conceallevel=2 " to replace markdown representation of emphasize words
