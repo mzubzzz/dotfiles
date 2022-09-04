@@ -13,8 +13,8 @@ set background=dark
 set ignorecase " ingnore case while searching
 set signcolumn=yes " set visible most left column
 set colorcolumn=150 " set visible line which marks N symbols line lenght
-set conceallevel=2 " to replace markdown representation of emphasize words
-set concealcursor=c " to replace markdown representation of emphasize words. Dosent conceal then cursor on the line 
+set conceallevel=2 " conceals all qoutes
+set concealcursor=c " to replace markdown representation of emphasize words. Dosent conceal then cursor on the line
 set shell=/bin/bash\ -i " allows vim use system bash with all alises (this is what it for)
 set list " show all whitespace characters
 set showbreak=↪ " sets up whitespace characters
@@ -26,7 +26,17 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 " set 2 spaces for i
 
 packadd! matchit " allows use % on html/xml tags
 
-
+let g:vim_json_syntax_conceal = 0 " disable quotes concealing in json (dosen't work)
+let g:indentLine_setConceal = 0
+let g:vim_markdown_folding_disabled = 1 " disable folding in markdown
+let g:vimspector_enable_mappings = 'HUMAN' " sets up default mapping in debag
+let g:coc_global_extensions = [
+      \ 'coc-tsserver',
+      \ 'coc-java',
+      \ 'coc-go',
+      \ 'coc-angular',
+      \ 'coc-eslint'
+  \ ]
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -42,19 +52,11 @@ Plug 'HerringtonDarkholme/yats.vim' " react syntax highlight
 Plug 'pangloss/vim-javascript' " JS highlight
 Plug 'uiiaoo/java-syntax.vim' " Java highlight
 Plug 'puremourning/vimspector' " debugger
-let g:vimspector_enable_mappings = 'HUMAN' " sets up default mapping in debag
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install --frozen-lockfile'} " COC
-let g:coc_global_extensions = [
-      \ 'coc-tsserver',
-      \ 'coc-java',
-      \ 'coc-go',
-      \ 'coc-angular',
-      \ 'coc-eslint'
-  \ ]
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' } " go documentation access
-Plug 'godlygeek/tabular' " markdown highlighting
+Plug 'godlygeek/tabular' " align tabular symbols (:Tab /{pattern})
 Plug 'preservim/vim-markdown' " markdown highlighting
-let g:vim_markdown_folding_disabled = 1 " disable folding in markdown
+Plug 'tpope/vim-fugitive' " git plugin
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' } " hex colors highlighting
 if (has("termguicolors"))
     set termguicolors
@@ -75,6 +77,8 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 nmap <leader>qf  <Plug>(coc-fix-current)
 " Autoplace closing bracket
 inoremap { {}<left>
+" select completion choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " GoTo code navigation. (for Coc plugin)
 nmap <silent> gd <Plug>(coc-definition)

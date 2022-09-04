@@ -40,6 +40,9 @@ export LESS_TERMCAP_so=$'\e[34m' # blue
 export LESS_TERMCAP_ue=$' # "\e[0m'
 export LESS_TERMCAP_us=$'\e[4m'  # underline
 export GROFF_NO_SGR=1 # For Konsole and Gnome-terminal
+#increase history size
+export HISTSIZE=5000
+export HISTFILESIZE=10000
 # avoid duplicates in history
 export HISTCONTROL=ignoredups:erasedups
 # append history entries
