@@ -8,10 +8,24 @@ TOKEN=$(curl -s 'http://10.16.3.4:8180/realms/eosubp/protocol/openid-connect/tok
     --data-urlencode 'client_id=eosubp-local-back'\
     | jq -r '.access_token')
 
-curl $1\
- -H "Authorization: Bearer "$TOKEN\
- -H 'cache-control: no-cache'\
- -H "Accept: application/json, text/plain, */*"
+if [ $# -eq 1 ]
+    then
+        curl $1\
+            -H "Authorization: Bearer "$TOKEN\
+            -H "Content-Type: application/json"\
+            -H "Cache-control: no-cache"\
+            -H "Accept: application/json, text/plain, */*"
+fi
+
+if [ $# -eq 2 ]
+    then
+        curl $1\
+            -H "Authorization: Bearer "$TOKEN\
+            -H "Content-Type: application/json"\
+            -H "Cache-control: no-cache"\
+            -H "Accept: application/json, text/plain, */*"\
+            -d @$2
+fi
 
 printf "\n"
 
