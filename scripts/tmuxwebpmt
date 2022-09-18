@@ -1,0 +1,9 @@
+#!/bin/bash
+
+tmux rename-window ongoing && \
+tmux split-window -h -c $ADVALANGE/eosubp/bpms-web/frontend && \
+tmux new-window -c $ADVALANGE/eosubp/bpms-web/frontend/src -n front && \
+tmux new-window -c $ADVALANGE/eosubp/bpms-web/backend -n back && \
+tmux new-window -c $HOME -n database && \
+tmux new-window -c $HOME -n curl && \
+tmux new-window -c $ADVALANGE/eosubp -n git
