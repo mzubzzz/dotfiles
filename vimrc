@@ -8,17 +8,18 @@ set nohlsearch
 set smartindent
 set incsearch
 set scrolloff=8
-set termguicolors " enabels termguicolors for color highlighting
+set termguicolors " enables termguicolors for color highlighting
 set background=dark
-set ignorecase " ingnore case while searching
+set ignorecase " ignore case while searching
 set signcolumn=yes " set visible most left column
-set colorcolumn=150 " set visible line which marks N symbols line lenght
-set conceallevel=2 " conceals all qoutes
-set concealcursor=c " to replace markdown representation of emphasize words. Dosent conceal then cursor on the line
-set shell=/bin/bash\ -i " allows vim use system bash with all alises (this is what it for)
-set list " show all whitespace characters
-set showbreak=↪ " sets up whitespace characters
-set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨,space:· " sets up whitespace characters
+set colorcolumn=150 " set visible line which marks N symbols line length
+set conceallevel=2 " conceals all quotes
+set concealcursor=c " to replace markdown representation of emphasize words. Doesn't conceal then cursor on the line
+set shell=/bin/bash\ -i " allows vim use system bash with all aliases (this is what it for)
+set list " show all white space characters
+set showbreak=↪ " sets up white space characters
+set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨,space:· " sets up white space characters
+" set spell spelllang=en_us,ru_ru,de_de " enables spell check
 autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 " set 2 symbols for indent in *.ts files
 autocmd FileType typescriptreact setlocal shiftwidth=2 tabstop=2 " set 2 spaces for indent in *.tsx files
 autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2 " set 2 spaces for indent in *.jsx files
@@ -26,16 +27,18 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 " set 2 spaces for i
 
 packadd! matchit " allows use % on html/xml tags
 
-let g:vim_json_syntax_conceal = 0 " disable quotes concealing in json (dosen't work)
+let g:vim_json_syntax_conceal = 0 " disable quotes concealing in json (doesn't work)
 let g:indentLine_setConceal = 0
 let g:vim_markdown_folding_disabled = 1 " disable folding in markdown
-let g:vimspector_enable_mappings = 'HUMAN' " sets up default mapping in debag
+let g:vimspector_enable_mappings = 'HUMAN' " sets up default mapping in debug
 let g:coc_global_extensions = [
       \ 'coc-tsserver',
       \ 'coc-java',
       \ 'coc-go',
       \ 'coc-angular',
-      \ 'coc-eslint'
+      \ 'coc-eslint',
+      \ 'coc-spell-checker',
+      \ 'coc-cspell-dicts'
   \ ]
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -47,7 +50,7 @@ endif
 call plug#begin()
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fzf first plugin
 Plug 'junegunn/fzf.vim' " fzf second plugin
-Plug 'gruvbox-community/gruvbox' " gruvbox colorscheme
+Plug 'gruvbox-community/gruvbox' " gruvbox color scheme
 Plug 'HerringtonDarkholme/yats.vim' " react syntax highlight
 Plug 'pangloss/vim-javascript' " JS highlight
 Plug 'uiiaoo/java-syntax.vim' " Java highlight
@@ -63,12 +66,13 @@ if (has("termguicolors"))
 endif
 call plug#end()
 
+" let g:gruvbox_guisp_fallback = "bg" " by default gruvbox doesn't highlight incorrectly spelled words (this fixes this)
 colorscheme gruvbox
-highlight clear SignColumn " must be after colorscheme. Removes color from most left sign column
+highlight clear SignColumn " must be after color scheme. Removes color from most left sign column
 hi ColorColumn ctermbg=darkgrey guibg=darkgrey " changes color of the colorcolumn
 hi SpecialKey ctermfg=gray guifg=grey70 " makes whitespace characters a bit dimmer
 
-" Remapings
+" Remapping
 
 let mapleader = ","
 " Remap keys for applying codeAction to the current buffer.
@@ -80,7 +84,7 @@ inoremap { {}<left>
 " select completion choice
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-" GoTo code navigation. (for Coc plugin)
+" GoTo code navigation. (for COC plugin)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)

@@ -1,3 +1,8 @@
 {
     "diagnostic.checkCurrentLine": true,
+    "cSpell.userWords": [
+      "ketting"
+    ],
+    "cSpellExt.enableDictionaries": ["russian", "german"],
+    "cSpell.language": "en,ru,de"
 }

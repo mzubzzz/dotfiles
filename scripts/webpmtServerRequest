@@ -1,11 +1,11 @@
 #!/bin/bash
 
-TOKEN=$(curl -s 'http://10.16.3.4:8180/realms/eosubp/protocol/openid-connect/token'\
+TOKEN=$(curl -s 'http://10.16.3.4:8180/realms/webpmt/protocol/openid-connect/token'\
     --header 'Content-Type: application/x-www-form-urlencoded'\
     --data-urlencode 'username=user'\
     --data-urlencode 'password=user'\
     --data-urlencode 'grant_type=password'\
-    --data-urlencode 'client_id=eosubp-local-back'\
+    --data-urlencode 'client_id=webpmt'\
     | jq -r '.access_token')
 
 if [ $# -eq 1 ]
