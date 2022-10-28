@@ -38,7 +38,8 @@ let g:coc_global_extensions = [
       \ 'coc-angular',
       \ 'coc-eslint',
       \ 'coc-spell-checker',
-      \ 'coc-cspell-dicts'
+      \ 'coc-cspell-dicts',
+      \ 'coc-prettier'
   \ ]
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
