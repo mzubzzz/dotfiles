@@ -4,6 +4,5 @@
       "ketting"
     ],
     "cSpellExt.enableDictionaries": ["russian", "german"],
-    "cSpell.language": "en,ru,de",
-    "coc.preferences.formatOnSaveFiletypes": ["css", "typescript", "typescriptreact"]
+    "cSpell.language": "en,ru,de"
 }

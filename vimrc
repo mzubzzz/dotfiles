@@ -52,8 +52,6 @@ call plug#begin()
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " fzf first plugin
 Plug 'junegunn/fzf.vim' " fzf second plugin
 Plug 'gruvbox-community/gruvbox' " gruvbox color scheme
-Plug 'HerringtonDarkholme/yats.vim' " react syntax highlight
-Plug 'pangloss/vim-javascript' " JS highlight
 Plug 'uiiaoo/java-syntax.vim' " Java highlight
 Plug 'puremourning/vimspector' " debugger
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install --frozen-lockfile'} " COC
