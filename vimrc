@@ -96,3 +96,9 @@ let g:go_auto_type_info = 1 "auto invokes :GoInfo
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>g :GFiles<CR>
 nnoremap <leader>b :Buffers<CR>
+
+" Autoformat on saving. Doesn't work. Looks like no uses eslint --fix
+"set formatexpr=
+"autocmd FileType typescriptreact set formatexpr= formatprg=prettier-eslint\ --stdin\ --parser\ typescript\ --single-quote\ true
+"autocmd FileType typescript set formatexpr= formatprg=prettier-eslint\ --stdin \ --parser\ typescript\ --single-quote\ true
+"autocmd BufWritePre *.tsx,*.ts :normal gggqG

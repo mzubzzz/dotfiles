@@ -1,0 +1,3 @@
+#!/bin/bash
+
+prettier-eslint --write $(git diff --name-only | xargs)
