@@ -19,6 +19,7 @@ set shell=/bin/bash\ -i " allows vim use system bash with all aliases (this is w
 set list " show all white space characters
 set showbreak=↪ " sets up white space characters
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨,space:· " sets up white space characters
+set laststatus=2 " set status bar always visible
 " set spell spelllang=en_us,ru_ru,de_de " enables spell check
 autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 " set 2 symbols for indent in *.ts files
 autocmd FileType typescriptreact setlocal shiftwidth=2 tabstop=2 " set 2 spaces for indent in *.tsx files
