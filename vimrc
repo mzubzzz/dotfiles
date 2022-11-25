@@ -25,6 +25,7 @@ autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 " set 2 symbols for 
 autocmd FileType typescriptreact setlocal shiftwidth=2 tabstop=2 " set 2 spaces for indent in *.tsx files
 autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2 " set 2 spaces for indent in *.jsx files
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 " set 2 spaces for indent in *.js files
+autocmd FileType css setlocal shiftwidth=2 tabstop=2 " set 2 spaces for indent in *.css files
 
 packadd! matchit " allows use % on html/xml tags
 
