@@ -6,7 +6,7 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 # --------------- Get the system env variables ---------------
-# (.profile readed by all system not only bash)
+# (.profile is read by all system not only bash)
 if [ -f ~/.profile ]; then
     . ~/.profile
 fi
@@ -81,7 +81,6 @@ set -o vi
 unset PROMPT_COMMAND  # to avoid annoing '__vte_prompt_command()' error
 [ -z "$TMUX" ] &&\
     { tmux attach ||\
-#    ((exec tmux new-session \; split-window -v \; select-pane -t 1 \;  split-window -h \; select-pane -t 3) &&\ #Will start without spliting
         (exec tmux new-session &&\
     exit;)}
 
