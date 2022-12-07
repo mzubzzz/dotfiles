@@ -99,6 +99,10 @@ nnoremap <leader>f :Files<CR>
 nnoremap <leader>g :GFiles<CR>
 nnoremap <leader>b :Buffers<CR>
 
+" Vispector (Debugger)
+" sets mapping for exit command
+nnoremap <leader>de :VimspectorReset<CR>
+
 " Autoformat on saving. Doesn't work. Looks like no uses eslint --fix
 "set formatexpr=
 "autocmd FileType typescriptreact set formatexpr= formatprg=prettier-eslint\ --stdin\ --parser\ typescript\ --single-quote\ true

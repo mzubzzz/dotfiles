@@ -1,0 +1,12 @@
+#!/bin/bash
+
+tmux rename-window ongoing && \
+tmux split-window -h -c $MY_GITHUB/fichpoker/server && \
+tmux split-window -v -c $MY_GITHUB/fichpoker/frontend && \
+tmux new-window -c $MY_GITHUB/fichpoker/frontend/src -n front && \
+tmux new-window -c $MY_GITHUB/fichpoker/server -n back && \
+tmux new-window -c $HOME -n db && \
+tmux new-window -c $HOME -n curl && \
+tmux new-window -c $MY_GITHUB/fichpoker -n git && \
+tmux select-window -t1
+tmux select-pane -t1
