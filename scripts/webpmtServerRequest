@@ -6,7 +6,7 @@ PASSWORD='password=user'
 GRANT_TYPE='grant_type=password'
 CLIENT='client_id=webpmt'
 
-TOKEN=$(curl $URL\
+TOKEN=$(curl -s $URL\
     --header 'Content-Type: application/x-www-form-urlencoded'\
     --data-urlencode $USER_NAME\
     --data-urlencode $PASSWORD\
@@ -26,6 +26,7 @@ fi
 if [ $# -eq 2 ]
     then
         curl $1\
+            -X "PATCH"\
             -H "Authorization: Bearer "$TOKEN\
             -H "Content-Type: application/json"\
             -H "Cache-control: no-cache"\

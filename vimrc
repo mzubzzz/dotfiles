@@ -98,6 +98,8 @@ let g:go_auto_type_info = 1 "auto invokes :GoInfo
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>g :GFiles<CR>
 nnoremap <leader>b :Buffers<CR>
+" Standart Vim explorer remaping
+nnoremap <leader>e :Explore<CR>
 
 " Vispector (Debugger)
 " sets mapping for exit command
