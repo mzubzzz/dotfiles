@@ -12,7 +12,7 @@ set termguicolors " enables termguicolors for color highlighting
 set background=dark
 set ignorecase " ignore case while searching
 set signcolumn=yes " set visible most left column
-set colorcolumn=150 " set visible line which marks N symbols line length
+" set colorcolumn=150 " set visible line which marks N symbols line length
 set conceallevel=2 " conceals all quotes
 set concealcursor=c " to replace markdown representation of emphasize words. Doesn't conceal then cursor on the line
 set shell=/bin/bash\ -i " allows vim use system bash with all aliases (this is what it for)
@@ -21,6 +21,19 @@ set showbreak=↪ " sets up white space characters
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨,space:· " sets up white space characters
 set laststatus=2 " set status bar always visible
 " set spell spelllang=en_us,ru_ru,de_de " enables spell check
+" Persistent undo
+ if has("persistent_undo")
+   let target_path = expand('~/.vim/undo')
+    " create the directory and any parent directories
+    " if the location does not exist.
+    if !isdirectory(target_path)
+        call mkdir(target_path, "p", 0700)
+    endif
+    let &undodir=target_path
+    set undofile " allows store undo history across buffers
+set undolevels=1000
+endif
+
 autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 " set 2 symbols for indent in *.ts files
 autocmd FileType typescriptreact setlocal shiftwidth=2 tabstop=2 " set 2 spaces for indent in *.tsx files
 autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2 " set 2 spaces for indent in *.jsx files
@@ -61,6 +74,7 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' } " go documentation access
 Plug 'godlygeek/tabular' " align tabular symbols (:Tab /{pattern})
 Plug 'preservim/vim-markdown' " markdown highlighting
 Plug 'tpope/vim-fugitive' " git plugin
+Plug 'mbbill/undotree'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' } " hex colors highlighting
 if (has("termguicolors"))
     set termguicolors
