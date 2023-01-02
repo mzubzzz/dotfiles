@@ -5,7 +5,6 @@ set shiftwidth=4
 set expandtab " changes tabs to spaces
 set smartindent
 set nohlsearch
-set smartindent
 set incsearch
 set scrolloff=8
 set termguicolors " enables termguicolors for color highlighting
@@ -20,7 +19,8 @@ set list " show all white space characters
 set showbreak=↪ " sets up white space characters
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨,space:· " sets up white space characters
 set laststatus=2 " set status bar always visible
-" set spell spelllang=en_us,ru_ru,de_de " enables spell check
+" set spell spelllang=en_us,ru_ru,de_de " enables spell check. COC Plugin does it
+" much better
 " Persistent undo
  if has("persistent_undo")
    let target_path = expand('~/.vim/undo')
@@ -33,6 +33,8 @@ set laststatus=2 " set status bar always visible
     set undofile " allows store undo history across buffers
 set undolevels=1000
 endif
+" autocmd FileType typescriptreact set formatprg=prettier-eslint\ --stdin
+" autocmd BufWritePre *.tsx :normal gggqG
 
 autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 " set 2 symbols for indent in *.ts files
 autocmd FileType typescriptreact setlocal shiftwidth=2 tabstop=2 " set 2 spaces for indent in *.tsx files
@@ -95,7 +97,10 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
 " Autoplace closing bracket
-inoremap { {}<left>
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap {{     {
+inoremap {}     {}
 " select completion choice
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
