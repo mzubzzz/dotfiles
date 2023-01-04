@@ -14,3 +14,5 @@ ln -sf $PWD/inputrc $HOME/.inputrc
 ls -l $HOME/.inputrc
 ln -sf $PWD/coc-settings.json $HOME/.vim/coc-settings.json
 ls -l $HOME/.vim/coc-settings.json
+ln -sf $PWD/nvim $HOME/.config/
+ls -l $HOME/.config/nvim
