@@ -1,0 +1,9 @@
+#!/bin/bash
+
+IFS=$'\n'
+for i in $(git status -s)
+do
+    # echo ${i:3}
+    prettier-eslint --write ${i:3}
+done
+
