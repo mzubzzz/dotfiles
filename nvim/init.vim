@@ -41,7 +41,7 @@ autocmd FileType css setlocal shiftwidth=2 tabstop=2 " set 2 spaces for indent i
 
 packadd! matchit " allows use % on html/xml tags
 
-let g:netrw_keepdir=0 " fixes vim Default explorer ability to copy files in browsing directory
+" let g:netrw_keepdir=0 " fixes vim Default explorer ability to copy files in browsing directory. Without this need to type 'cd' before copy/paste operations
 let g:vim_json_syntax_conceal = 0 " disable quotes concealing in json (doesn't work)
 let g:indentLine_setConceal = 0
 let g:vim_markdown_folding_disabled = 1 " disable folding in markdown

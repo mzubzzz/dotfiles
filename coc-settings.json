@@ -2,6 +2,7 @@
     "diagnostic.checkCurrentLine": true,
     "cSpell.userWords": [
       "HATEOAS",
+      "deletable",
       "ketting"
     ],
     "cSpellExt.enableDictionaries": ["russian", "german"],
