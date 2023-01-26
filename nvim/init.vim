@@ -73,6 +73,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install --frozen-loc
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' } " go documentation access
 Plug 'godlygeek/tabular' " align tabular symbols (:Tab /{pattern})
 Plug 'preservim/vim-markdown' " markdown highlighting
+Plug 'davidgranstrom/nvim-markdown-preview' " preview markdonw in browser
 Plug 'tpope/vim-fugitive' " git plugin
 Plug 'mbbill/undotree'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' } " hex colors highlighting
