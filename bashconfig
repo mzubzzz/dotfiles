@@ -60,7 +60,7 @@ export PATH="$JAVA_HOME/bin:$PATH"
 # For Advalange project
 export PATH="/opt/apache-maven-3.8.4/bin:$PATH"
 
-CDPATH==.:$MY_GITHUB:$PROCESSTECH:$ADVALANGE
+CDPATH=".:$MY_GITHUB:$PROCESSTECH:$ADVALANGE"
 export CDPATH
 
 
