@@ -25,10 +25,17 @@ if [ $# -eq 1 ]
             -H "Accept: application/json, text/plain, */*"
 fi
 
-if [ $# -eq 2 ]
+if [ $# -eq 2 ] && [ $2 = "DELETE" ]
     then
         curl $1\
-            -X "PATCH"\
+            -X $2\
+            -H "Authorization: Bearer "$TOKEN\
+            -H "Content-Type: application/json"\
+            -H "Cache-control: no-cache"\
+            -H "Accept: application/json, text/plain, */*"
+    else
+        curl $1\
+            -X "POST"\
             -H "Authorization: Bearer "$TOKEN\
             -H "Content-Type: application/json"\
             -H "Cache-control: no-cache"\
