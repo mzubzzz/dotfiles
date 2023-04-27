@@ -48,7 +48,6 @@ let g:vim_markdown_folding_disabled = 1 " disable folding in markdown
 let g:vimspector_enable_mappings = 'HUMAN' " sets up default mapping in debug
 let g:coc_global_extensions = [
       \ 'coc-tsserver',
-      \ 'coc-java',
       \ 'coc-go',
       \ 'coc-angular',
       \ 'coc-eslint',
@@ -100,7 +99,7 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 nmap <leader>qf  <Plug>(coc-fix-current)
 " Autoplace closing bracket
 inoremap {      {}<Left>
-inoremap {<CR>  {<CR>}<Esc>O
+inoremap {<CR>  {<CR>};<Esc>O
 inoremap {{     {
 inoremap {}     {}
 " select completion choice
