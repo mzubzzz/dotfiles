@@ -3,8 +3,8 @@
 # set -x
 
 URL='https://webpmt-srv01-dev.advalange.com/realms/webpmt/protocol/openid-connect/token'
-USER_NAME='username=user'
-PASSWORD='password=user'
+USER_NAME='username=admin'
+PASSWORD='password=admin'
 GRANT_TYPE='grant_type=password'
 CLIENT='client_id=webpmt'
 
