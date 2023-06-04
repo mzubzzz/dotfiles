@@ -9,5 +9,6 @@
       "sprotty"
     ],
     "cSpellExt.enableDictionaries": ["russian", "german"],
-    "cSpell.language": "en,ru,de"
+    "cSpell.language": "en,ru,de",
+    "java.compile.nullAnalysis.mode": "disabled"
 }
