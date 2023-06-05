@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tmux rename-window ongoing && \
+tmux rename-window runaserver && \
+tmux new-window -c $HOME -n devstudio && \
 tmux new-window -c $HOME -n db && \
 tmux new-window -c $PROCESSTECH/runawfe-professional-server -n gitserver && \
 tmux new-window -c $PROCESSTECH/runawfe-professional-devstudio -n gitdevstudio && \
