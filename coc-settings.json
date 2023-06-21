@@ -4,8 +4,12 @@
       "Datepicker",
       "HATEOAS",
       "Keycloak",
+      "Vuex",
+      "Zubarev",
+      "ausfuehrlich",
       "deletable",
       "ketting",
+      "pathify",
       "sprotty"
     ],
     "cSpellExt.enableDictionaries": ["russian", "german"],

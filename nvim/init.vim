@@ -35,7 +35,9 @@ endif
 
 autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 " set 2 symbols for indent in *.ts files
 autocmd FileType typescriptreact setlocal shiftwidth=2 tabstop=2 " set 2 spaces for indent in *.tsx files
+autocmd FileType typescriptvue setlocal shiftwidth=2 tabstop=2 " set 2 spaces for indent in *.tsx files
 autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2 " set 2 spaces for indent in *.jsx files
+autocmd FileType javascriptvue setlocal shiftwidth=2 tabstop=2 " set 2 spaces for indent in *.jsx files
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 " set 2 spaces for indent in *.js files
 autocmd FileType css setlocal shiftwidth=2 tabstop=2 " set 2 spaces for indent in *.css files
 
@@ -53,7 +55,8 @@ let g:coc_global_extensions = [
       \ 'coc-eslint',
       \ 'coc-spell-checker',
       \ 'coc-cspell-dicts',
-      \ 'coc-prettier'
+      \ 'coc-prettier',
+      \ 'coc-vetur'
   \ ]
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
