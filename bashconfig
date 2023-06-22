@@ -30,6 +30,8 @@ export ADVALANGE="$GITLAB/advalange"
 export SCRIPTS="$DOT/scripts"
 export MYVIMRC="$HOME/.vimrc"
 export GOPATH="$HOME/go"
+export JAVA8="/usr/lib/jvm/java-1.8.0-amazon-corretto"
+export JAVA11="/usr/lib/jvm/zulu11.54.25-ca-jdk11.0.14.1-linux_x64"
 # define man pages width
 export MANWIDTH=150
 # variables for colorizing less pages

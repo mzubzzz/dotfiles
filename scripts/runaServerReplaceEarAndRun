@@ -15,6 +15,8 @@ print_fail() {
     printf "+++++++++++++++++++++++++++++++++++++\n"
 }
 
+JAVA_HOME=$JAVA8
+
 cp "$ear_path" "$target_path" && print_success || print_fail
 
 ~/bin/wildfly/bin/standalone.sh --debug

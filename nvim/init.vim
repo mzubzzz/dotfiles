@@ -53,6 +53,7 @@ let g:coc_global_extensions = [
       \ 'coc-go',
       \ 'coc-angular',
       \ 'coc-eslint',
+      \ 'coc-java',
       \ 'coc-spell-checker',
       \ 'coc-cspell-dicts',
       \ 'coc-prettier',
@@ -71,7 +72,7 @@ Plug 'junegunn/fzf.vim' " fzf second plugin
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Plug 'uiiaoo/java-syntax.vim' " Java highlight
 Plug 'puremourning/vimspector' " debugger
-Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install --frozen-lockfile'} " COC
+Plug 'neoclide/coc.nvim', {'build': {'unix': 'yarn install --frozen-lockfile'},} " COC
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' } " go documentation access
 Plug 'godlygeek/tabular' " align tabular symbols (:Tab /{pattern})
 Plug 'preservim/vim-markdown' " markdown highlighting
@@ -81,7 +82,7 @@ Plug 'mbbill/undotree'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' } " hex colors highlighting
 " Styling plugins
 Plug 'gruvbox-community/gruvbox' " gruvbox color scheme
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' } " color scheme
 call plug#end()
 
 if (has("termguicolors"))

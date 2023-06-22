@@ -1,1 +1,2 @@
- ~/bin/wildfly/bin/standalone.sh --debug
+JAVA_HOME=$JAVA8
+~/bin/wildfly/bin/standalone.sh --debug
