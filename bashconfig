@@ -89,8 +89,8 @@ unset PROMPT_COMMAND  # to avoid annoing '__vte_prompt_command()' error
 
 # --------------- Aliases ---------------
 alias vi=nvim
-alias ls="ls -h --color=auto"
-alias ll="ls -l --color=auto"
+alias ls="lsd -h"
+alias ll="lsd -l"
 alias copyclip="xclip -selection c" # allows copy text to the clipboard buffer
 
 # --------------- Functions ---------------
