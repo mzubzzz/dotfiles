@@ -4,10 +4,8 @@ IFS=$'\n'
 filesString=""
 for i in $(git status -s)
 do
-    # echo ${i:3}
     filesString+="${i:3} "
 done
-echo $filesString
 IFS=$' '
 prettier-eslint --write $filesString
 
