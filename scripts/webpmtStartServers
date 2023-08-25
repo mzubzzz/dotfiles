@@ -1,0 +1,2 @@
+cd $ADVALANGE/eosubp;
+docker compose up --build
