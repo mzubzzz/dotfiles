@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+#
+open_script_file() {
+    nvim $(which $1)
+}
+open_script_file "$1"

@@ -94,6 +94,8 @@ alias ll="lsd -l"
 alias copyclip="xclip -selection c" # allows copy text to the clipboard buffer
 
 # --------------- Functions ---------------
+# --------------- Source completions---------------
+. $DOT/completions/*
 # --------------- Navigation ---------------
 data() {
     cd $DATA
