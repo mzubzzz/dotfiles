@@ -1,7 +1,6 @@
 #!/bin/bash
 
-tmux rename-window ongoing && \
-tmux split-window -h -c $ADVALANGE/eosubp/scripts && \
+tmux rename-window servers && \
 tmux split-window -v -c $ADVALANGE/eosubp/bpms-web/frontend && \
 tmux new-window -c $ADVALANGE/eosubp/bpms-web/frontend/src -n front && \
 tmux new-window -c $ADVALANGE/eosubp/bpms-web/backend -n back && \
