@@ -1,0 +1,5 @@
+#!/bin/bash
+
+JAVA_HOME=$JAVA11
+cd $ADVALANGE/eosubp/scripts
+$ADVALANGE/eosubp/scripts/build-web-app-backend.sh
