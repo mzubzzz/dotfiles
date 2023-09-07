@@ -1,1 +1,1 @@
-pg_dump -C -h webpmt-srv01-dev.advalange.com -p 5434 -U webpmt -d webpmt | psql -h localhost -p 5433 -U dbuser -d sirius-web-db
+pg_dump -C -h webpmt-srv01-dev.advalange.com -p 5434 -U webpmt -d webpmt | psql -h localhost -p 5434 -U webpmt -d webpmt

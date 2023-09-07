@@ -1,1 +1,1 @@
-psql -h localhost -p 5433 -U dbuser -d sirius-web-db
+psql -h localhost -p 5434 -U webpmt -d webpmt
