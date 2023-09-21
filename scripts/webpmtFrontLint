@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd $ADVALANGE/eosubp/bpms-web/frontend;
+npm run lint

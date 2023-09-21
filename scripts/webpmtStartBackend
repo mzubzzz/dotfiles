@@ -1,2 +1,4 @@
+#!/bin/bash
+
 cd $ADVALANGE/eosubp;
 docker compose -f docker-compose.backend.yml --env-file .env.backend up --build
