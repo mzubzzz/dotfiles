@@ -1,0 +1,24 @@
+#!/bin/bash
+#
+ear_path=$PROCESSTECH/runa_web/target/runa-web.war
+target_path=$HOME/bin/wildfly-20.0.0.Final/standalone/deployments
+
+print_success() {
+    printf "++++++++++++++++++++++++++++++++++++++\n"
+    printf "+++WAR has been copied \e[32mSUCCESSFULLY\e[0m+++\n"
+    printf "++++++++++++++++++++++++++++++++++++++\n"
+}
+
+print_fail() {
+    printf "+++++++++++++++++++++++++++++++++++++\n"
+    printf "+++\e[31mFAIL\e[0m: WAR hasn't been copied +++\n"
+    printf "+++++++++++++++++++++++++++++++++++++\n"
+    exit 1
+}
+
+cd $PROCESSTECH/runa_web;
+JAVA_HOME=$JAVA8
+mvn clean package && \
+cp "$ear_path" "$target_path" && \
+(print_success || print_fail) && \
+$HOME/bin/wildfly-20.0.0.Final/bin/standalone.sh --debug

@@ -1,12 +1,14 @@
 #!/bin/bash
 
-tmux rename-window runaserver && \
-tmux new-window -c $HOME -n devstudio && \
-tmux new-window -c $PROCESSTECH/runawfe-professional-server/wfe-spa -n spa && \
+tmux rename-window server && \
+tmux new-window -c $HOME -n DS && \
+tmux new-window -c $PROCESSTECH/runawfe-professional-server/wfe-spa -n newWeb && \
+tmux new-window -c $HOME -n webEd && \
 tmux new-window -c $PROCESSTECH/runawfe-professional-server/wfe-spa/src -n front && \
 tmux new-window -c $HOME -n db && \
-tmux new-window -c $PROCESSTECH/runawfe-professional-server -n gitserver && \
-tmux new-window -c $PROCESSTECH/runawfe-professional-devstudio -n gitdevstudio && \
+tmux new-window -c $PROCESSTECH/runawfe-professional-server -n gitServ && \
+tmux new-window -c $PROCESSTECH/runawfe-professional-devstudio -n gitDS && \
+tmux new-window -c $PROCESSTECH/runa_web -n gitWebEd && \
 tmux new-window -c $MY_GITLAB/processtechTasks -n tasks && \
 tmux new-window -c $MY_GITHUB/dotfiles -n dot && \
 tmux select-window -t1
