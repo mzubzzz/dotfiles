@@ -2,9 +2,10 @@
 
 tmux rename-window server && \
 tmux new-window -c $HOME -n DS && \
-tmux new-window -c $PROCESSTECH/runawfe-professional-server/wfe-spa -n newWeb && \
 tmux new-window -c $HOME -n webEd && \
-tmux new-window -c $PROCESSTECH/runawfe-professional-server/wfe-spa/src -n front && \
+tmux new-window -c $PROCESSTECH/runawfe-professional-server/wfe-spa -n newWeb && \
+tmux new-window -c $PROCESSTECH/runawfe-professional-server/wfe-spa/src -n frontNewWb && \
+tmux new-window -c $PROCESSTECH/runa_web/src/main/webapp/WEB-INF -n frontWebEd && \
 tmux new-window -c $HOME -n db && \
 tmux new-window -c $PROCESSTECH/runawfe-professional-server -n gitServ && \
 tmux new-window -c $PROCESSTECH/runawfe-professional-devstudio -n gitDS && \

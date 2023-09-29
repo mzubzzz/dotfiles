@@ -1,3 +1,4 @@
 #!/bin/bash
 
+cd $ADVALANGE/eosubp;
 git checkout HEAD -- *.project *.prefs *.classpath *.checkstyle && git clean -df *.prefs
