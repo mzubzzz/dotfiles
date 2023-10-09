@@ -60,7 +60,9 @@ then
 fi
 export PATH="$HOME/Repos/github/mzubzzz/dotfiles/scripts:$PATH"
 export PATH="$JAVA_HOME/bin:$PATH"
-# For Advalange project
+# for yarn global instalations
+export PATH="$(yarn global bin):$PATH"
+# Maven path For Advalange project
 export PATH="/opt/apache-maven-3.8.4/bin:$PATH"
 
 CDPATH=".:$MY_GITHUB:$PROCESSTECH:$ADVALANGE:$MY_GITLAB"
