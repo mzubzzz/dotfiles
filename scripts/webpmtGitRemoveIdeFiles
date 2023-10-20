@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd $ADVALANGE/eosubp;
+cd $WEBPMT;
 git checkout HEAD -- *.project *.prefs *.classpath *.checkstyle && git clean -df *.prefs

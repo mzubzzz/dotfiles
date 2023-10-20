@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd $ADVALANGE/eosubp;
+cd $WEBPMT;
 docker compose up --build

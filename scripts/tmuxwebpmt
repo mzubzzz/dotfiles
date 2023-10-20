@@ -1,12 +1,12 @@
 #!/bin/bash
 
 tmux rename-window servers && \
-tmux split-window -v -c $ADVALANGE/eosubp/bpms-web/frontend && \
-tmux new-window -c $ADVALANGE/eosubp/bpms-web/frontend/src -n front && \
-tmux new-window -c $ADVALANGE/eosubp/bpms-web/backend -n back && \
+tmux split-window -v -c $WEBPMT/bpms-web/frontend && \
+tmux new-window -c $WEBPMT/bpms-web/frontend/src -n front && \
+tmux new-window -c $WEBPMT/bpms-web/backend -n back && \
 tmux new-window -c $HOME -n db && \
 tmux new-window -c $HOME -n curl && \
-tmux new-window -c $ADVALANGE/eosubp -n git && \
+tmux new-window -c $WEBPMT -n git && \
 tmux new-window -c $MY_GITHUB/advalangeTasks -n tasks && \
 tmux select-window -t1
 tmux select-pane -t1

@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd $ADVALANGE/eosubp/bpms-web/frontend;
+cd $WEBPMT/bpms-web/frontend;
 npm run lint

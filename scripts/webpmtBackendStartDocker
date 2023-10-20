@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd $ADVALANGE/eosubp;
+cd $WEBPMT;
 docker compose -f docker-compose.backend.yml --env-file .env.backend up --build
