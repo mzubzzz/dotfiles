@@ -1,1 +1,6 @@
+#!/bin/bash
+
+# to connect to postgres webpmt database which runs by docker container
+# webpmt
+
 psql -h localhost -p 5434 -U webpmt -d webpmt

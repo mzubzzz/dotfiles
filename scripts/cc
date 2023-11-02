@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# to use in vim
+# allows copy selected text to os buffer
+# usage exapmle:
+# 1. select text in vim
+# 2. press ':' to enter command mode
+# 3. type :w !cc
+# 3. full command example :'<,'>w !cc
+
+xclip -selection c

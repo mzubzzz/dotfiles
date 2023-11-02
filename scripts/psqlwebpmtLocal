@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# to connect to postgres webpmt database which started by script (not docker container)
+# dbpwd
+
+psql -h localhost -p 5433 -U dbuser -d sirius-web-db
