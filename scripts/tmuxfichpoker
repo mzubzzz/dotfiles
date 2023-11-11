@@ -1,5 +1,6 @@
 #!/bin/bash
 
+tmux new -s fichpoker && \
 tmux rename-window ongoing && \
 tmux split-window -h -c $MY_GITHUB/fichpoker/server && \
 tmux split-window -v -c $MY_GITHUB/fichpoker/frontend && \

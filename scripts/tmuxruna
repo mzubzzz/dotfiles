@@ -1,5 +1,6 @@
 #!/bin/bash
 
+tmux new -s runa && \
 tmux rename-window server && \
 tmux new-window -c $HOME -n DS && \
 tmux new-window -c $HOME -n webEd && \
