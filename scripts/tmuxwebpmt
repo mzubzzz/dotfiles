@@ -1,6 +1,5 @@
 #!/bin/bash
 
-tmux new -s webpmt && \
 tmux rename-window servers && \
 tmux split-window -v -c $WEBPMT/bpms-web/frontend && \
 tmux new-window -c $WEBPMT/bpms-web/frontend/src -n front && \

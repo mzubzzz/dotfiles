@@ -1,4 +1,5 @@
 #!/bin/bash
+# deprecated?
 
 JAVA_HOME=$JAVA11 &&\
 $WEBPMT/scripts/build-web-app-backend.sh
