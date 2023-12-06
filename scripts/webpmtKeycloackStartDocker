@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd $WEBPMT;
+docker compose -f docker-compose.keycloak.yml up --build
