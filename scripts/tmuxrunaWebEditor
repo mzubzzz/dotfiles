@@ -1,0 +1,9 @@
+#!/bin/bash
+
+tmux rename-window webEd && \
+tmux new-window -c $PROCESSTECH/runa_web/src/main/webapp/WEB-INF -n front && \
+tmux new-window -c $HOME -n db && \
+tmux new-window -c $PROCESSTECH/runa_web -n gitWebEd && \
+tmux new-window -c $MY_GITLAB/processtechTasks -n tasks && \
+tmux new-window -c $MY_GITHUB/dotfiles -n dot && \
+tmux select-window -t1
