@@ -33,6 +33,7 @@ export MY_VIMRC="$HOME/.vimrc"
 export GOPATH="$HOME/go"
 export JAVA8="/usr/lib/jvm/java-1.8.0-amazon-corretto"
 export JAVA11="/usr/lib/jvm/zulu11.54.25-ca-jdk11.0.14.1-linux_x64"
+export JAVA11_AMAZON="/usr/lib/jvm/amazon-corretto-11.0.21.9.1-linux-x64"
 # define man pages width
 export MANWIDTH=150
 # variables for colorizing less pages
@@ -92,6 +93,7 @@ unset PROMPT_COMMAND  # to avoid annoing '__vte_prompt_command()' error
 
 # --------------- Aliases ---------------
 alias vi=nvim
+alias iv=nvim
 #alias ls="lsd -h # bad for parsing
 alias ll="lsd -l"
 

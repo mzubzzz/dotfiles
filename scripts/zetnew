@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cd $MY_GITHUB/zet
+
+dir=$(isosec)
+
+mkdir $dir
+
+cd $dir
+
+touch README.md
+
+nvim README.md
