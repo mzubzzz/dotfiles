@@ -6,4 +6,5 @@ tmux new-window -c $HOME -n db && \
 tmux new-window -c $PROCESSTECH/runa_web -n gitWebEd && \
 tmux new-window -c $MY_GITLAB/processtechTasks -n tasks && \
 tmux new-window -c $MY_GITHUB/dotfiles -n dot && \
+tmux new-window -c $GITHUB/mxgraph/javascript/src -n mxgraph && \
 tmux select-window -t1

@@ -80,6 +80,7 @@ Plug 'davidgranstrom/nvim-markdown-preview' " preview markdonw in browser
 Plug 'tpope/vim-fugitive' " git plugin
 Plug 'mbbill/undotree'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' } " hex colors highlighting
+Plug 'numToStr/Comment.nvim' " commenting lines
 " Styling plugins
 Plug 'gruvbox-community/gruvbox' " gruvbox color scheme
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' } " color scheme
@@ -137,3 +138,5 @@ nnoremap <leader>de :VimspectorReset<CR>
 
 " Imports treesitter preference
 :lua require('treesitter')
+" comments plugin setup
+lua require('Comment').setup()

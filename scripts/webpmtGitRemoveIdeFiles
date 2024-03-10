@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd $WEBPMT;
-git checkout HEAD -- *.project *.prefs *.classpath *.checkstyle && git clean -df *.prefs bpms.settings
+git checkout HEAD -- *.project *.prefs *.classpath *.checkstyle && git clean -df *.prefs bpms.settings bpms-web/backend/sirius-web-settings

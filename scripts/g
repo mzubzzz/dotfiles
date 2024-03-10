@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+
+google() {
+    url="https://www.google.com/search?q=$*"
+    # echo ${url// /+}
+    lynx ${url// /+}
+}
+google "$*"

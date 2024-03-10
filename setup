@@ -2,17 +2,27 @@
 
 ln -sf $PWD/bashconfig $HOME/.bashrc
 ls -l $HOME/.bashrc
+
 ln -sf $PWD/vimrc $HOME/.vimrc
 ls -l $HOME/.vimrc
+
 ln -sf $PWD/profile $HOME/.profile
 ls -l $HOME/.profile
+
 ln -sf $PWD/dircolors $HOME/.dircolors
 ls -l $HOME/.dircolors
+
 ln -sf $PWD/tmux.conf $HOME/.tmux.conf
 ls -l $HOME/.tmux.conf
+
 ln -sf $PWD/inputrc $HOME/.inputrc
 ls -l $HOME/.inputrc
+
 ln -sf $PWD/coc-settings.json $HOME/.vim/coc-settings.json
 ls -l $HOME/.vim/coc-settings.json
+
 ln -sf $PWD/nvim $HOME/.config/
 ls -l $HOME/.config/nvim
+
+ln -sf $PWD/lynxrc $HOME/.lynxrc
+ls -l $HOME/.lynxrc

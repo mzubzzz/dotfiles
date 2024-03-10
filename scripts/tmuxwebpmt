@@ -1,10 +1,11 @@
 #!/bin/bash
 
 tmux rename-window servers && \
+tmux split-window -v -c $WEBPMT && \
 tmux split-window -v -c $WEBPMT/bpms-web/frontend && \
 tmux split-window -h -c $WEBPMT/sirius-components/packages && \
 tmux new-window -c $WEBPMT/bpms-web/frontend/src -n front && \
-tmux new-window -c $WEBPMT/bpms-web/frontend/src -n frontSirius && \
+tmux new-window -c $WEBPMT/sirius-components/packages -n frontSirius && \
 tmux new-window -c $WEBPMT/bpms-web/backend -n back && \
 tmux new-window -c $HOME -n db && \
 tmux new-window -c $HOME -n curl && \

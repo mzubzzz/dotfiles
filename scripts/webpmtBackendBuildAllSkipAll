@@ -10,4 +10,4 @@ cd $WEBPMT/sirius-components/packages &&\
 mvn clean install -s ../../settings.xml --batch-mode -DskipTests -Dcheckstyle.skip &&\
 
 cd $WEBPMT/bpms-web/backend &&\
-mvn clean verify -s ../../settings.xml --batch-mode -DskipTests -Dcheckstyle.skip
+mvn clean install -s ../../settings.xml --batch-mode -DskipTests -Dcheckstyle.skip
