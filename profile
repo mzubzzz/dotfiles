@@ -23,3 +23,5 @@ export SWT_GTK3=1
 
 # prevents eclipse from blinking in KDE Plasma
 export GTK_IM_MODULE=ibus 
+# enhance wayland and awt interaction
+export WEBKIT_DISABLE_COMPOSITING_MODE=1

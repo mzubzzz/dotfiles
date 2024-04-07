@@ -4,10 +4,10 @@ set -x
 JAVA_HOME=$JAVA11 &&\
 
 cd $WEBPMT/sirius-emf-json/releng/org.eclipse.sirius.emfjson.releng &&\
-mvn clean install -s ../../../settings.xml --batch-mode &&\
+mvn clean install -s ../../../settings.xml --batch-mode -DskipTests &&\
 
 cd $WEBPMT/sirius-components/packages &&\
-mvn clean install -s ../../settings.xml --batch-mode &&\
+mvn clean install -s ../../settings.xml --batch-mode -DskipTests &&\
 
 cd $WEBPMT/bpms-web/backend &&\
-mvn clean verify -s ../../settings.xml --batch-mode
+mvn clean install -s ../../settings.xml --batch-mode

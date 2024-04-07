@@ -4,6 +4,6 @@
 google() {
     url="https://www.google.com/search?q=$*"
     # echo ${url// /+}
-    lynx ${url// /+}
+    w3m ${url// /+}
 }
 google "$*"
