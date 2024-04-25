@@ -19,6 +19,7 @@ print_fail() {
 JAVA_HOME=$JAVA8
 
 cd $PROCESSTECH/runawfe-professional-server/wfe-app && \
+# /opt/apache-maven-3.9.6/bin/mvn clean package -P spa -DskipTests && \
 mvn clean package -P spa -DskipTests && \
 cp "$ear_path" "$target_path" && \
 (print_success || print_fail) && \

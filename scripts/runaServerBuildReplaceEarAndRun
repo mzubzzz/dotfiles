@@ -18,7 +18,8 @@ print_fail() {
 
 JAVA_HOME=$JAVA8
 cd $PROCESSTECH/runawfe-professional-server/wfe-app && \
-mvn clean package -Dmaven.test.skip=true && \
+# /opt/apache-maven-3.9.6/bin/mvn clean package -Dmaven.test.skip=false && \
+mvn clean package -Dmaven.test.skip=false && \
 cp "$ear_path" "$target_path" && \
 (print_success || print_fail) && \
 ~/bin/wildfly/bin/standalone.sh --debug
