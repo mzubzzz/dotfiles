@@ -78,6 +78,8 @@ Plug 'preservim/vim-markdown' " markdown highlighting
 Plug 'tpope/vim-fugitive' " git plugin
 Plug 'mbbill/undotree'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' } " hex colors highlighting
+Plug 'yaegassy/coc-volar', { 'do': 'yarn install --frozen-lockfile' }
+Plug 'yaegassy/coc-volar-tools', { 'do': 'yarn install --frozen-lockfile' }
 if (has("termguicolors"))
     set termguicolors
 endif

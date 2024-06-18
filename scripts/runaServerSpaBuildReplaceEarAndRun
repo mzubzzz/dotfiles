@@ -2,6 +2,10 @@
 
 ear_path=$PROCESSTECH/runawfe-professional-server/wfe-ear/'${jboss.home.dir}'/standalone/deployments/runawfe.ear
 target_path=~/bin/wildfly/standalone/deployments/
+# wildfly for java 11
+wildfly_path=~/bin/runawfe-professional-autobuild-develop-wildfly/wildfly
+# wildfly for java 8
+# wildfly_path=~/bin/wildfly
 
 print_success() {
     printf "++++++++++++++++++++++++++++++++++++++\n"
@@ -16,11 +20,12 @@ print_fail() {
     exit 1
 }
 
-JAVA_HOME=$JAVA8
+SKIP_TESTS=true
+JAVA_HOME=$JAVA11_AMAZON
 
 cd $PROCESSTECH/runawfe-professional-server/wfe-app && \
 # /opt/apache-maven-3.9.6/bin/mvn clean package -P spa -DskipTests && \
-mvn clean package -P spa -DskipTests && \
+mvn clean package -P spa -Dmaven.test.skip=$SKIP_TESTS && \
 cp "$ear_path" "$target_path" && \
 (print_success || print_fail) && \
-~/bin/wildfly/bin/standalone.sh --debug
+$wildfly_path/bin/standalone.sh --debug

@@ -1,8 +1,10 @@
 #!/bin/bash
 
-JAVA_HOME=$JAVA11_AMAZON
+# JAVA_HOME=$JAVA8 &&\
+JAVA_HOME=$JAVA11
 echo $JAVA_HOME
-cd $PROCESSTECH/runawfe-professional-devstudio/plugins; mvn clean package -DcurrentPlatformBuild &&\
+cd $PROCESSTECH/runawfe-professional-devstudio/plugins; mvn clean package -DcurrentPlatformBuild
 
+JAVA_HOME=$JAVA11
+echo $JAVA_HOME
 $PROCESSTECH/runawfe-professional-devstudio/plugins/ru.runa.gpd.maven/target/products/RunaWFE_DeveloperStudio/linux/gtk/x86_64/runa-gpd
-
