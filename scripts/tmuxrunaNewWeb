@@ -2,6 +2,7 @@
 
 tmux rename-window server && \
 tmux new-window -c $PROCESSTECH/runawfe-professional-server/wfe-spa -n newWeb && \
+tmux new-window -c $PROCESSTECH/runawfe-professional-server/wfe-spa/src -n front && \
 tmux new-window -c $HOME -n db && \
 tmux new-window -c $PROCESSTECH/runawfe-professional-server -n gitServ && \
 tmux new-window -c $MY_GITLAB/processtechTasks -n tasks && \

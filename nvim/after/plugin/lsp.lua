@@ -1,17 +1,27 @@
+-- KEYMAPS
 local lsp_zero = require('lsp-zero')
-
 lsp_zero.on_attach(function(client, bufnr)
-  -- see :help lsp-zero-keybindings
-  -- to learn the available actions
   lsp_zero.default_keymaps({buffer = bufnr})
+  local opts = {buffer = bufnr, remap = false}
+  -- runs code action
+  vim.keymap.set('n', '<leader>ca', function() vim.lsp.buf.code_action() end, opts)
 end)
 
+-- completion keymaps
+local cmp = require('cmp')
+cmp.setup({
+    mapping = {
+        ['<Enter>'] = cmp.mapping.confirm({select = false}),
+    }
+})
+
+-- SERVERS
 require'lspconfig'.tsserver.setup{
   init_options = {
     plugins = {
       {
         name = "@vue/typescript-plugin",
-        location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
+        location = "/usr/local/lib/node_modules/@vue/language-server",
         languages = {"javascript", "typescript", "vue", "typescriptreact",  "javascriptreact"},
       },
     }
@@ -68,3 +78,4 @@ require'lspconfig'.lua_ls.setup {
   }
 }
 
+require'lspconfig'.bashls.setup{}
