@@ -1,5 +1,5 @@
 #!/bin/bash
-#
+
 # set -x
 
 URL='https://webpmt-srv01-dev.advalange.com/realms/webpmt/protocol/openid-connect/token'
