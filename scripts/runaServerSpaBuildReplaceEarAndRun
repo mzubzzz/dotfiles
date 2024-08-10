@@ -2,10 +2,7 @@
 
 ear_path=$PROCESSTECH/runawfe-professional-server/wfe-ear/'${jboss.home.dir}'/standalone/deployments/runawfe.ear
 target_path=~/bin/wildfly/standalone/deployments/
-# wildfly for java 11
-wildfly_path=~/bin/runawfe-professional-autobuild-develop-wildfly/wildfly
-# wildfly for java 8
-# wildfly_path=~/bin/wildfly
+wildfly_path=~/bin/wildfly
 
 print_success() {
     printf "++++++++++++++++++++++++++++++++++++++\n"

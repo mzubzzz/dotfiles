@@ -32,9 +32,9 @@ export SCRIPTS="$DOT/scripts"
 export MY_VIMRC="$HOME/.vimrc"
 export GOPATH="$HOME/go"
 export JAVA8="/usr/lib/jvm/java-1.8.0-amazon-corretto"
-export JAVA11="/usr/lib/jvm/zulu11.54.25-ca-jdk11.0.14.1-linux_x64"
-export JAVA11_AMAZON="/usr/lib/jvm/amazon-corretto-11.0.21.9.1-linux-x64"
-export JAVA21_AMAZON="/usr/lib/jvm/amazon-corretto-21.0.3.9.1-linux-x64"
+export JAVA11="/usr/lib/jvm/zulu11.74.15-ca-jdk11.0.24-linux_x64"
+export JAVA11_AMAZON="/usr/lib/jvm/amazon-corretto-11.0.24.8.1-linux-x64"
+export JAVA21_AMAZON="/usr/lib/jvm/amazon-corretto-21.0.4.7.1-linux-x64"
 # define man pages width
 export MANWIDTH=150
 # variables for colorizing less pages

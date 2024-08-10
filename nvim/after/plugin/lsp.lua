@@ -83,3 +83,7 @@ require'lspconfig'.bashls.setup{}
 require'lspconfig'.java_language_server.setup{
     cmd = { "/home/mzubzzz/Repos/github/java-language-server/dist/lang_server_linux.sh" };
 }
+
+require'lspconfig'.volar.setup{
+  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
+}
