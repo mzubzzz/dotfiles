@@ -1,5 +1,17 @@
 #!/bin/bash
 
-ssh mikhail.zubarev@10.16.3.26
+
 # webpmt.advalange.com
-# ssh admin@10.16.3.4 # Gfhjkm123
+# pass: Gfhjkm123
+# LOGIN=admin
+# HOST=10.16.3.4
+
+# webpmt-test.advalange.com
+# LOGIN=mikhail.zubarev
+# HOST=10.16.3.31
+
+# webpmt-dev.advalange.com
+LOGIN=mikhail.zubarev
+HOST=10.16.3.26
+
+ssh $LOGIN@$HOST
