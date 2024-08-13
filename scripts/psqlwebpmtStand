@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# to connect to postgres webpmt database on stand
+# webpmt
+
+# webpmt.advalange 
+MAIN="10.16.3.4"
+# webpmt-dev.advalange 
+DEV="10.16.3.26"
+
+psql -h $DEV -p 5434 -U webpmt -d webpmt
