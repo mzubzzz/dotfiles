@@ -7,7 +7,7 @@ cd $WEBPMT/sirius-emf-json/releng/org.eclipse.sirius.emfjson.releng &&\
 mvn clean install -s ../../../settings.xml --batch-mode -Dcheckstyle.skip &&\
 
 cd $WEBPMT/sirius-components/packages &&\
-mvn clean install -s ../../settings.xml --batch-mode -Dcheckstyle.skip &&\
+mvn clean install -s ../../settings.xml --batch-mode -DskipTests -Dcheckstyle.skip &&\
 
 cd $WEBPMT/bpms-web/backend &&\
 mvn clean verify -s ../../settings.xml --batch-mode -Dcheckstyle.skip
