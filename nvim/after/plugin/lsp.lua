@@ -16,15 +16,15 @@ cmp.setup({
 })
 
 -- SERVERS
-require'lspconfig'.tsserver.setup{
+require'lspconfig'.ts_ls.setup{
   init_options = {
     plugins = {
       {
         name = "@vue/typescript-plugin",
-        location = "/usr/local/lib/node_modules/@vue/language-server",
+        location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
         languages = {"javascript", "typescript", "vue", "typescriptreact",  "javascriptreact"},
       },
-    }
+    },
   },
   filetypes = {
     "javascript",
@@ -34,6 +34,26 @@ require'lspconfig'.tsserver.setup{
     "vue",
   },
 }
+
+-- tsserver is deprecated
+-- require'lspconfig'.tsserver.setup{
+--   init_options = {
+--     plugins = {
+--       {
+--         name = "@vue/typescript-plugin",
+--         location = "/usr/local/lib/node_modules/@vue/language-server",
+--         languages = {"javascript", "typescript", "vue", "typescriptreact",  "javascriptreact"},
+--       },
+--     }
+--   },
+--   filetypes = {
+--     "javascript",
+--     "typescript",
+--     "typescriptreact",
+--     "javascriptreact",
+--     "vue",
+--   },
+-- }
 
 require'lspconfig'.eslint.setup({
   on_attach = function(client, bufnr)
@@ -87,3 +107,5 @@ require'lspconfig'.java_language_server.setup{
 require'lspconfig'.volar.setup{
   filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
 }
+
+require'lspconfig'.clangd.setup{}

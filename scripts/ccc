@@ -5,7 +5,7 @@
 # usage exapmle:
 # 1. select text in vim
 # 2. press ':' to enter command mode
-# 3. type :w !cc
-# 3. full command example :'<,'>w !cc
+# 3. type :w !ccc
+# 3. full command example :'<,'>w !ccc
 
 xclip -selection c

@@ -1,0 +1,21 @@
+#!/bin/sh
+
+changed_files_path=$MY_GITHUB/advalangeTasks/PLC_fake_connection/test-patched-plugins
+changed_files_project=com.advalange.mopsplc.pse.project
+changed_files_project_ui=com.advalange.mopsplc.pse.project.ui
+
+target_path_project=$ADVALANGE/des.adv.plc/pse/bundles/com.advalange.mopsplc.pse.project/src/com/advalange/mopsplc/pse/project/devices/connection
+target_path_project_ui=$ADVALANGE/des.adv.plc/pse/bundles/com.advalange.mopsplc.pse.project.ui
+target_path_project_ui_connection="$target_path_project_ui/src/com/advalange/mopsplc/pse/project/ui/device/connection"
+
+cd "$changed_files_path/$changed_files_project";
+copiedFile=$(find -name 'DeviceConnectionManager.java');
+cp $copiedFile $target_path_project
+
+cd "$changed_files_path/$changed_files_project_ui";
+copiedFile1=$(find -name 'ConnectHandler.java');
+copiedFile2=$(find -name 'StartHandler.java');
+cp $copiedFile1 $copiedFile2 $target_path_project_ui_connection
+# we don't need this file?
+# copiedFile="./plugin.xml";
+# cp $copiedFile $target_path_project_ui

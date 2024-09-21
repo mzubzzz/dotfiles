@@ -112,11 +112,12 @@ data() {
 
 ## --------------- Custom prompt ---------------
 source ~/git-prompt.sh
-export GIT_PS1_SHOWDIRTYSTATE=1
+# export GIT_PS1_SHOWDIRTYSTATE=1 # causes slow effect in terminal
 export PS1='\[\e[36m\]\u\[\e[35m\]@\[\e[31m\]\h\[\e[35m\]:\[\e[33m\]\W\[\e[32m\]$(__git_ps1 "(%s)")\[\e[35m\]$\[\e[00m\] '
 
 # --------------- FZF completion enable ---------------
-FZF_COMPLETION_FILE=/usr/share/bash-completion/completions/fzf
-[[ -f $FZF_COMPLETION_FILE ]] && source $FZF_COMPLETION_FILE
+eval "$(fzf --bash)"
 
+# ---------------- Homebrew --------------------------
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+

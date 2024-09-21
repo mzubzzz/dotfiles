@@ -1,0 +1,21 @@
+#!/bin/bash
+
+JAVA_HOME=$JAVA21_AMAZON
+echo $JAVA_HOME
+
+cd $ADVALANGE/des.adv.plc/pse && \
+mvn clean package && \
+
+target_path=$ADVALANGE/des.adv.plc/pse/products/com.advalange.mopsplc.pse.product.definition/target/products/mopsplc/linux/gtk/x86_64
+
+cd $target_path/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_21.0.1.v20231028-0937 &&\
+chmod +x ./jre/bin/java &&\
+chmod +x ./jre/lib/jspawnhelper &&\
+
+cd $target_path/plugins/com.advalange.mopsplc.pse.matiec.linux.x86_64_1.0.0.*/ &&\
+chmod -R +x matiec &&\
+
+$target_path/pse -consoleLog
+
+
+

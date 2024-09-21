@@ -1,0 +1,10 @@
+#!/bin/bash
+
+JAVA_HOME=$JAVA21_AMAZON
+echo $JAVA_HOME
+
+cd $ADVALANGE/des.adv.plc/pse && \
+$ADVALANGE/des.adv.plc/pse/products/com.advalange.mopsplc.pse.product.definition/target/products/mopsplc/linux/gtk/x86_64/pse
+
+
+
