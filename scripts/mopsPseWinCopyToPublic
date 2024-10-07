@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cp $ADVALANGE/des.adv.plc/pse/products/com.advalange.mopsplc.pse.product.definition/target/products/mopsplc-win32.win32.x86_64.zip ~/Public
+
+
+

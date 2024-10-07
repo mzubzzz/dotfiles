@@ -101,6 +101,7 @@ alias vi=nvim
 alias iv=nvim
 #alias ls="lsd -h # bad for parsing
 alias ll="lsd -l"
+alias maven="mvn"
 
 # --------------- Functions ---------------
 # --------------- Source completions---------------
