@@ -4,11 +4,11 @@ JAVA_HOME=$JAVA21_AMAZON
 echo $JAVA_HOME
 
 cd $ADVALANGE/des.adv.plc/pse && \
-mvn clean package && \
+/opt/apache-maven-3.9.9/bin/mvn clean package && \
 
 target_path=$ADVALANGE/des.adv.plc/pse/products/com.advalange.mopsplc.pse.product.definition/target/products/mopsplc/linux/gtk/x86_64
 
-cd $target_path/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_21.0.1.v20231028-0937 &&\
+cd $target_path/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_* &&\
 chmod +x ./jre/bin/java &&\
 chmod +x ./jre/lib/jspawnhelper &&\
 

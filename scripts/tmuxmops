@@ -2,11 +2,8 @@
 
 tmux rename-window home && \
 tmux new-window -c $ADVALANGE/des.adv.plc/pse -n pse && \
-tmux new-window -c $ADVALANGE/des.adv.plc/adn -n adn && \
 tmux new-window -c $ADVALANGE/des.adv.plc/ds -n ds && \
 tmux new-window -c $ADVALANGE/des.adv.plc/vd -n vd && \
-tmux new-window -c $ADVALANGE/des.adv.plc/rt -n rt && \
 tmux new-window -c $ADVALANGE/des.adv.plc -n git && \
 tmux new-window -c $MY_GITHUB/advalangeTasks -n tasks && \
-tmux new-window -c $MY_GITHUB/dotfiles -n dot && \
-tmux select-window -t7
+tmux select-window -t5

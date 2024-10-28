@@ -1,0 +1,28 @@
+#!/bin/sh
+
+ear_path=$PROCESSTECH/private/runawfe-professional-server/wfe-ear/'${jboss.home.dir}'/standalone/deployments/runawfe.ear
+target_path=~/bin/wildfly/standalone/deployments/
+wildfly_path=~/bin/wildfly
+
+print_success() {
+    printf "++++++++++++++++++++++++++++++++++++++\n"
+    printf "+++EAR has been copied \e[32mSUCCESSFULLY\e[0m+++\n"
+    printf "++++++++++++++++++++++++++++++++++++++\n"
+}
+
+print_fail() {
+    printf "+++++++++++++++++++++++++++++++++++++\n"
+    printf "+++\e[31mFAIL\e[0m: EAR hasn't been copied +++\n"
+    printf "+++++++++++++++++++++++++++++++++++++\n"
+    exit 1
+}
+
+SKIP_TESTS=true
+JAVA_HOME=$JAVA11_AMAZON
+
+cd $PROCESSTECH/private/runawfe-professional-server/wfe-app && \
+# /opt/apache-maven-3.9.6/bin/mvn clean package -P spa -DskipTests && \
+mvn clean package -P spa -Dmaven.test.skip=$SKIP_TESTS && \
+cp "$ear_path" "$target_path" && \
+(print_success || print_fail) && \
+$wildfly_path/bin/standalone.sh --debug
