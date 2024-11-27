@@ -105,7 +105,12 @@ require'lspconfig'.java_language_server.setup{
 }
 
 require'lspconfig'.volar.setup{
-  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
+  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
+    init_options = {
+    typescript = {
+      tsdk = '/usr/local/lib/node_modules/typescript/lib'
+    }
+  }
 }
 
 require'lspconfig'.clangd.setup{}

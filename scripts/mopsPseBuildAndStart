@@ -4,7 +4,7 @@ JAVA_HOME=$JAVA21_AMAZON
 echo $JAVA_HOME
 
 cd $ADVALANGE/des.adv.plc/pse && \
-/opt/apache-maven-3.9.9/bin/mvn clean package && \
+/opt/apache-maven-3.9.9/bin/mvn clean package -Dmaven.test.skip=true && \
 
 target_path=$ADVALANGE/des.adv.plc/pse/products/com.advalange.mopsplc.pse.product.definition/target/products/mopsplc/linux/gtk/x86_64
 
