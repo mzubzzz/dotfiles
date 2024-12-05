@@ -13,7 +13,7 @@ fi
 
 # --------------- Shell env variables ---------------
 if [ -f /usr/bin/vim ]; then
-    export EDITOR="/usr/bin/vim"
+    export EDITOR="/usr/bin/nvim"
 else
     echo -e "\e[31mThere is no vim in the system\e[0m"
 fi
