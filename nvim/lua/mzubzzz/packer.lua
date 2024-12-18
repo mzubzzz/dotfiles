@@ -59,4 +59,30 @@ return require('packer').startup(function(use)
     use 'norcalli/nvim-colorizer.lua'
     require'colorizer'.setup()
 
+    -- markdown preview
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+
+    -- Oil file viewer
+    use({
+      "stevearc/oil.nvim",
+      config = function()
+        require("oil").setup()
+      end,
+    })
+
+    -- Better staus line and mini icons
+    use({
+      "echasnovski/mini.nvim",
+      config = function()
+        -- status line
+        local statusline = require("mini.statusline")
+        statusline.setup { use_icons = true }
+        -- mini icons
+        require("mini.icons").setup()
+      end,
+    })
+
 end)
