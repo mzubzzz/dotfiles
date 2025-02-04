@@ -102,6 +102,7 @@ alias iv=nvim
 #alias ls="lsd -h # bad for parsing
 alias ll="lsd -l"
 alias maven="mvn"
+alias maven9="/opt/apache-maven-3.9.9/bin/mvn"
 
 # --------------- Functions ---------------
 # --------------- Source completions---------------
