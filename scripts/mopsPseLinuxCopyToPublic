@@ -1,6 +1,3 @@
 #!/bin/bash
 
-cp $ADVALANGE/des.adv.plc/pse/products/com.advalange.mopsplc.pse.product.definition/target/products/mopsplc-linux.gtk.x86_64.tar.gz ~/Public
-
-
-
+cp $ADVALANGE/des.adv.plc/pse/products/com.advalange.mopsplc.pse.product.definition/target/products/arma-plc-pse-linux.gtk.x86_64.tar.gz ~/Public
