@@ -1,5 +1,5 @@
 vim.opt.number = true -- turn on line numbers
-vim.opt.relativenumber = true -- numbers to be relative
+vim.opt.relativenumber = false-- numbers to be relative
 vim.opt.tabstop= 2
 vim.opt.shiftwidth= 2
 vim.opt.expandtab = true -- changes tabs to spaces

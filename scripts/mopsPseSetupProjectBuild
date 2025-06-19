@@ -1,0 +1,17 @@
+#!/bin/bash
+
+cd $ADVALANGE/des.adv.plc/vd/dsp/com.advalange.mopsplc.dsp.vd.001.linux/toolchain && \
+
+if [[ -d gcc ]]; then
+  rm -r gcc/*
+else
+  mkdir gcc
+fi
+
+tar -xvf gcc.tar.gz -C gcc && \
+
+printf "+++\e[32m Toolchain extracted \e[0m+++\n" && \
+
+find $ADVALANGE/des.adv.plc/pse/bundles/com.advalange.mopsplc.pse.matiec.linux.x86_64 -type f -exec chmod 755 {} \; && \
+
+printf "+++\e[32m Permissions granted \e[0m+++\n"
