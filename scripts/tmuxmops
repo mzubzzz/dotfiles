@@ -2,7 +2,7 @@
 
 tmux rename-window home && \
 tmux new-window -c $ADVALANGE/des.adv.plc/pse -n pse && \
-tmux new-window -c $ADVALANGE/des.adv.plc/ds -n ds && \
+tmux new-window -c $ADVALANGE/des.adv.dsp -n ds && \
 tmux new-window -c $ADVALANGE/des.adv.plc/vd -n vd && \
 tmux new-window -c $ADVALANGE/des.adv.plc/lib -n lib && \
 tmux new-window -c $ADVALANGE/des.adv.plc -n git && \

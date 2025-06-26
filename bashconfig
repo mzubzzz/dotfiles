@@ -71,6 +71,8 @@ export PATH="/opt/apache-maven-3.8.4/bin:$PATH"
 export PATH="$PATH:/opt/nvim-linux64/bin"
 # lua language server path
 export PATH="$PATH:/home/linuxbrew/.linuxbrew/Cellar/lua-language-server/3.9.3/bin"
+# go path
+export PATH="$PATH:$HOME/go/bin"
 
 CDPATH=".:$MY_GITHUB:$PROCESSTECH:$ADVALANGE:$MY_GITLAB"
 export CDPATH
