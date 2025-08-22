@@ -19,3 +19,5 @@ vim.keymap.set("n", "<leader>ct", function()
   local line = "console.trace('" .. filename .. "')"
   vim.api.nvim_buf_set_lines(0, vim.api.nvim_win_get_cursor(0)[1], vim.api.nvim_win_get_cursor(0)[1], false, {line})
 end, { noremap = true, silent = true, desc = "inserts console.trage" })
+
+vim.keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })

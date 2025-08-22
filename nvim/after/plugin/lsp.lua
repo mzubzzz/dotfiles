@@ -1,12 +1,4 @@
 -- KEYMAPS
-local lsp_zero = require('lsp-zero')
-lsp_zero.on_attach(function(client, bufnr)
-  lsp_zero.default_keymaps({buffer = bufnr})
-  local opts = {buffer = bufnr, remap = false}
-  -- runs code action
-  vim.keymap.set('n', '<leader>ca', function() vim.lsp.buf.code_action() end, opts)
-end)
-
 -- completion keymaps
 local cmp = require('cmp')
 cmp.setup({
@@ -16,45 +8,6 @@ cmp.setup({
 })
 
 -- SERVERS
-require'lspconfig'.ts_ls.setup{
-  init_options = {
-    plugins = {
-      {
-        name = "@vue/typescript-plugin",
-        location = "/usr/local/lib/node_modules/@vue/language-server",
-        languages = {"javascript", "typescript", "vue", "typescriptreact",  "javascriptreact"},
-      },
-    },
-  },
-  filetypes = {
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "javascriptreact",
-    "vue",
-  },
-}
-
--- tsserver is deprecated
--- require'lspconfig'.tsserver.setup{
---   init_options = {
---     plugins = {
---       {
---         name = "@vue/typescript-plugin",
---         location = "/usr/local/lib/node_modules/@vue/language-server",
---         languages = {"javascript", "typescript", "vue", "typescriptreact",  "javascriptreact"},
---       },
---     }
---   },
---   filetypes = {
---     "javascript",
---     "typescript",
---     "typescriptreact",
---     "javascriptreact",
---     "vue",
---   },
--- }
-
 require'lspconfig'.eslint.setup({
   on_attach = function(client, bufnr)
     vim.api.nvim_create_autocmd("BufWritePre", {
@@ -102,15 +55,6 @@ require'lspconfig'.bashls.setup{}
 
 require'lspconfig'.java_language_server.setup{
     cmd = { "/home/mzubzzz/Repos/github/java-language-server/dist/lang_server_linux.sh" };
-}
-
-require'lspconfig'.volar.setup{
-  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
-    init_options = {
-    typescript = {
-      tsdk = '/usr/local/lib/node_modules/typescript/lib'
-    }
-  }
 }
 
 require'lspconfig'.clangd.setup{}
