@@ -1,0 +1,6 @@
+#!/bin/bash
+
+figlet "STARTING 4DIAC" && \
+
+$RTSOFT/4diac-ide/plugins/org.eclipse.fordiac.ide.product/target/products/org.eclipse.fordiac.ide.product/linux/gtk/x86_64/4diac-ide/4diac-ide -consoleLog
+

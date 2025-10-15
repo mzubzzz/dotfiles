@@ -1,0 +1,7 @@
+#!/bin/bash
+
+tmux rename-window build && \
+tmux new-window -c $RTSOFT/4diac-ide -n git && \
+tmux new-window -c $MY_GITHUB/rtsoftTasks -n tasks && \
+tmux new-window -c $MY_GITHUB/dotfiles -n dot && \
+tmux select-window -t2

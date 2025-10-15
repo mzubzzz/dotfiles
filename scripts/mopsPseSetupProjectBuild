@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd $ADVALANGE/des.adv.plc/vd/dsp/com.advalange.mopsplc.dsp.vd.001.linux/toolchain && \
+cd $ADVALANGE/des.adv.plc/vd/dsp/com.advalange.mopsplc.dsp.vd.multitask.test.linux/toolchain && \
 
 if [[ -d gcc ]]; then
   rm -r gcc/*

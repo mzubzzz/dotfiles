@@ -27,6 +27,7 @@ export DOT="$MY_GITHUB/dotfiles"
 export PROCESSTECH="$GITLAB/processtech"
 export SVN="$HOME/Repos/svn"
 export ADVALANGE="$GITLAB/advalange"
+export RTSOFT="$GITLAB/rtsoft"
 export WEBPMT="$ADVALANGE/webpmt"
 export SCRIPTS="$DOT/scripts"
 export MY_VIMRC="$HOME/.vimrc"
@@ -74,7 +75,7 @@ export PATH="$PATH:/home/linuxbrew/.linuxbrew/Cellar/lua-language-server/3.9.3/b
 # go path
 export PATH="$PATH:$HOME/go/bin"
 
-CDPATH=".:$MY_GITHUB:$PROCESSTECH:$ADVALANGE:$MY_GITLAB"
+CDPATH=".:$MY_GITHUB:$PROCESSTECH:$ADVALANGE:$MY_GITLAB:$RTSOFT"
 export CDPATH
 
 
