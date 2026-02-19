@@ -50,6 +50,16 @@ return require('packer').startup(function(use)
         run = function() vim.fn["mkdp#util#install"]() end,
     })
 
+    -- adoc preview
+    use({
+      'tigion/nvim-asciidoc-preview',
+      run = 'cd server && npm install --omit=dev',
+      config = function()
+        require('asciidoc-preview').setup({
+        })
+      end,
+      })
+
     -- Oil file viewer
     use({
       "stevearc/oil.nvim",
@@ -69,5 +79,20 @@ return require('packer').startup(function(use)
         require("mini.icons").setup()
       end,
     })
+
+    -- java plugin
+    use 'mfussenegger/nvim-jdtls'
+
+    -- copilot chat
+  use({
+    "CopilotC-Nvim/CopilotChat.nvim",
+    dependencies = {
+      { "nvim-lua/plenary.nvim", branch = "master" },
+    },
+    build = "make tiktoken",
+    opts = {
+      -- See Configuration section for options
+    },
+  })
 
 end)

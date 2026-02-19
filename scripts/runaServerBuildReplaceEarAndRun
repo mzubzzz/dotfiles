@@ -1,6 +1,7 @@
 #!/bin/sh
 
 ear_path=$PROCESSTECH/runawfe-professional-server/wfe-ear/'${jboss.home.dir}'/standalone/deployments/runawfe.ear
+# ear_path=$PROCESSTECH/private/runawfe-professional-server/wfe-ear/'${jboss.home.dir}'/standalone/deployments/runawfe.ear
 wildfly_path=~/bin/wildfly # for develop branch
 # wildfly_path=~/bin/wildfly10 # for master branch
 target_path=$wildfly_path/standalone/deployments/
@@ -23,6 +24,7 @@ JAVA_HOME=$JAVA11_AMAZON
 # JAVA_HOME=$JAVA8 # for master branch
 echo $JAVA_HOME
 cd $PROCESSTECH/runawfe-professional-server/wfe-app && \
+# cd $PROCESSTECH/private/runawfe-professional-server/wfe-app && \
 # /opt/apache-maven-3.8.8/bin/mvn clean package -Dmaven.test.skip=false && \ # for master branch
 mvn clean package -Dmaven.test.skip=$SKIP_TESTS && \
 cp "$ear_path" "$target_path" && \

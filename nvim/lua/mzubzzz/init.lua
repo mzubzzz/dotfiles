@@ -2,67 +2,10 @@ require("mzubzzz.remap")
 require("mzubzzz.set")
 require("mzubzzz.packer")
 
+-- GO
 vim.lsp.enable('gopls')
-vim.lsp.config('ts_ls', {
-  init_options = {
-    plugins = {
-      {
-        name = "@vue/typescript-plugin",
-        location = "/usr/local/lib/node_modules/@vue/language-server",
-        languages = {"javascript", "typescript", "vue", "typescriptreact",  "javascriptreact"},
-        configNamespace = "typescript",
-      },
-    },
-  },
-  filetypes = {
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "javascriptreact",
-    "vue",
-  }
-})
-vim.lsp.enable('ts_ls')
-vim.lsp.config('vue_ls', {
-    on_init = function(client)
-    client.handlers['tsserver/request'] = function(_, result, context)
-      local ts_clients = vim.lsp.get_clients({ bufnr = context.bufnr, name = 'ts_ls' })
-      local vtsls_clients = vim.lsp.get_clients({ bufnr = context.bufnr, name = 'vtsls' })
-      local clients = {}
 
-      vim.list_extend(clients, ts_clients)
-      vim.list_extend(clients, vtsls_clients)
-
-      if #clients == 0 then
-        vim.notify('Could not find `vtsls` or `ts_ls` lsp client, `vue_ls` would not work without it.', vim.log.levels.ERROR)
-        return
-      end
-      local ts_client = clients[1]
-
-      local param = unpack(result)
-      local id, command, payload = unpack(param)
-      ts_client:exec_cmd({
-        title = 'vue_request_forward', -- You can give title anything as it's used to represent a command in the UI, `:h Client:exec_cmd`
-        command = 'typescript.tsserverRequest',
-        arguments = {
-          command,
-          payload,
-        },
-      }, { bufnr = context.bufnr }, function(_, r)
-          local response = r and r.body
-          -- TODO: handle error or response nil here, e.g. logging
-          -- NOTE: Do NOT return if there's an error or no response, just return nil back to the vue_ls to prevent memory leak
-          local response_data = { { id, response } }
-
-          ---@diagnostic disable-next-line: param-type-mismatch
-          client:notify('tsserver/response', response_data)
-        end)
-    end
-  end,
-
-})
-vim.lsp.enable('vue_ls')
-vim.lsp.enable('eslint')
+-- LUA
 vim.lsp.config('lua_ls', {
   settings = {
     Lua = {
@@ -90,17 +33,114 @@ vim.lsp.config('lua_ls', {
   }
 })
 vim.lsp.enable('lua_ls')
--- vim.lsp.enable('eslint')
--- vim.lsp.config('eslint', {
-  -- on_attach = function(_, bufnr)
-  --   vim.api.nvim_create_autocmd("BufWritePre", {
-  --     buffer = bufnr,
-  --     command = "EslintFixAll",
-  --   })
-  -- end,
--- })
 
+-- ESLINT
+vim.lsp.config('eslint', {
+  on_attach = function(client, bufnr)
+    vim.api.nvim_buf_create_user_command(bufnr, "EslintFixAll", function()
+      -- vim.lsp.buf.execute_command({
+        client:exec_cmd({
+        command = "eslint.applyAllFixes",
+        arguments = {
+          { uri = vim.uri_from_bufnr(bufnr), version = vim.lsp.util.buf_versions[bufnr] }
+        },
+      })
+    end, { desc = "Fix all ESLint errors" })
+  end,
+})
+vim.lsp.enable('eslint')
+-- elise auto fix on save for eslint supported file types
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = { '*.js', '*.jsx', '*.ts', '*.tsx', '*.go', '*.lua', '*.vue' },
+  callback = function()
+    vim.cmd("silent! EslintFixAll")
+  end,
+})
+
+-- JAVA
+  vim.lsp.config('jdtls', { cmd = { 'jdtls' } })
+  vim.lsp.enable('jdtls')
+
+-- JS,TS, VUE, REACT
+local vue_language_server_path = '/usr/local/lib/node_modules/@vue/language-server'
+local tsserver_filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' }
+local vue_plugin = {
+  name = '@vue/typescript-plugin',
+  location = vue_language_server_path,
+  languages = { 'vue' },
+  configNamespace = 'typescript',
+}
+local vtsls_config = {
+  settings = {
+    vtsls = {
+      tsserver = {
+        globalPlugins = {
+          vue_plugin,
+        },
+      },
+    },
+  },
+  filetypes = tsserver_filetypes,
+}
+local vue_ls_config = {}
+vim.lsp.config('ts_ls', {
+  init_options = {
+    plugins = {
+      {
+        name = "@vue/typescript-plugin",
+        location = "/usr/local/lib/node_modules/@vue/language-server",
+        languages = {"javascript", "typescript", "vue", "typescriptreact",  "javascriptreact"},
+        configNamespace = "typescript",
+      },
+    },
+  },
+  filetypes = {
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "javascriptreact",
+    "vue",
+  }
+})
+vim.lsp.config('vtsls', vtsls_config)
+vim.lsp.config('vue_ls', vue_ls_config)
+vim.lsp.enable({'vtsls', 'vue_ls'}) -- If using `ts_ls` replace `vtsls` to `ts_ls`
+
+-- Errors inline
 vim.diagnostic.config({
   -- virtual_lines = true,
    virtual_text = true,
 })
+
+-- auto highlighting words under cursor
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+  callback = function(args)
+    local bufnr = args.buf
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+
+    -- 1. Verify the client supports highlighting
+    if client and client.server_capabilities.documentHighlightProvider then
+      local group = vim.api.nvim_create_augroup("lsp_document_highlight", { clear = false })
+      -- Clear existing autocmds for this buffer to avoid duplication
+      vim.api.nvim_clear_autocmds({ group = group, buffer = bufnr })
+
+      -- 2. Trigger highlight on CursorHold
+      vim.api.nvim_create_autocmd("CursorHold", {
+        group = group,
+        buffer = bufnr,
+        callback = vim.lsp.buf.document_highlight,
+      })
+
+      -- 3. Clear highlight on movement
+      vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+        group = group,
+        buffer = bufnr,
+        callback = vim.lsp.buf.clear_references,
+      })
+    end
+  end,
+})
+
+-- update timeout to make sure CursorHold is triggered faster for document highlighting
+vim.opt.updatetime = 300 -- milliseconds

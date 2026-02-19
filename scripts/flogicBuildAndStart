@@ -8,7 +8,7 @@ cd $RTSOFT/4diac-ide && \
 /opt/apache-maven-3.9.9/bin/mvn clean verify -Dcheckstyle.skip -Dmaven.test.skip=true && \
 # /opt/apache-maven-3.9.9/bin/mvn clean verify -Dcheckstyle.skip && \
 
-figlet "STARTING 4DIAC" && \
+figlet "STARTING FLOGIC" && \
 
-$RTSOFT/4diac-ide/plugins/org.eclipse.fordiac.ide.product/target/products/org.eclipse.fordiac.ide.product/linux/gtk/x86_64/4diac-ide/4diac-ide -consoleLog
+$RTSOFT/4diac-ide/plugins/org.eclipse.fordiac.ide.product/target/products/org.eclipse.fordiac.ide.product/linux/gtk/x86_64/flogic-ide/flogic-ide -consoleLog
 

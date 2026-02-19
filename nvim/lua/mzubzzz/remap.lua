@@ -27,3 +27,11 @@ local on_attach = function(_, bufnr)
 end
 
 vim.lsp.config("*", { on_attach = on_attach })
+
+-- Change <C-Space> to trigger LSP completion
+vim.keymap.set('i', '<C-Space>', '<C-n>', { desc = "Trigger LSP completion" })
+
+vim.keymap.set('i', '<CR>', function()
+  return vim.fn.pumvisible() ~= 0 and '<C-y>' or '<CR>'
+end, { expr = true })
+
