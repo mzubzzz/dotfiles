@@ -55,8 +55,7 @@ return require('packer').startup(function(use)
       'tigion/nvim-asciidoc-preview',
       run = 'cd server && npm install --omit=dev',
       config = function()
-        require('asciidoc-preview').setup({
-        })
+        require('asciidoc-preview').setup({})
       end,
       })
 
@@ -65,6 +64,30 @@ return require('packer').startup(function(use)
       "stevearc/oil.nvim",
       config = function()
         require("oil").setup()
+      end,
+    })
+    -- Diagnostic in oii viewer
+    use({
+      "JezerM/oil-lsp-diagnostics.nvim",
+      dependencies = { "stevearc/oil.nvim" },
+      opts = {},
+      config = function()
+        require("oil-lsp-diagnostics").setup({
+          count = true,
+          parent_dirs = true,
+          diagnostic_colors = {
+            error = "DiagnosticError",
+            warn  = "DiagnosticWarn",
+            info  = "DiagnosticInfo",
+            hint  = "DiagnosticHint",
+          },
+          diagnostic_symbols = {
+            error = "",
+            warn = "",
+            info = "",
+            hint = "󰌶",
+          }
+        })
       end,
     })
 
@@ -90,9 +113,7 @@ return require('packer').startup(function(use)
       { "nvim-lua/plenary.nvim", branch = "master" },
     },
     build = "make tiktoken",
-    opts = {
-      -- See Configuration section for options
-    },
+    opts = {},
   })
 
 end)

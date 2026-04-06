@@ -1,0 +1,1 @@
+sudo ip link set dev amn0 mtu 1280

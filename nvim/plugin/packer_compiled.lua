@@ -80,6 +80,11 @@ _G.packer_plugins = {
     path = "/home/mzubzzz/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
+  ["CopilotChat.nvim"] = {
+    loaded = true,
+    path = "/home/mzubzzz/.local/share/nvim/site/pack/packer/start/CopilotChat.nvim",
+    url = "https://github.com/CopilotC-Nvim/CopilotChat.nvim"
+  },
   ["markdown-preview.nvim"] = {
     loaded = true,
     path = "/home/mzubzzz/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
@@ -102,10 +107,20 @@ _G.packer_plugins = {
     path = "/home/mzubzzz/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
+  ["nvim-jdtls"] = {
+    loaded = true,
+    path = "/home/mzubzzz/.local/share/nvim/site/pack/packer/start/nvim-jdtls",
+    url = "https://github.com/mfussenegger/nvim-jdtls"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/mzubzzz/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["oil-lsp-diagnostics.nvim"] = {
+    loaded = true,
+    path = "/home/mzubzzz/.local/share/nvim/site/pack/packer/start/oil-lsp-diagnostics.nvim",
+    url = "https://github.com/JezerM/oil-lsp-diagnostics.nvim"
   },
   ["oil.nvim"] = {
     config = { "\27LJ\2\n1\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\boil\frequire\0" },
@@ -122,11 +137,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mzubzzz/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
-  },
-  ["tabnine-nvim"] = {
-    loaded = true,
-    path = "/home/mzubzzz/.local/share/nvim/site/pack/packer/start/tabnine-nvim",
-    url = "https://github.com/codota/tabnine-nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -152,22 +162,22 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: mini.nvim
-time([[Config for mini.nvim]], true)
-try_loadstring("\27LJ\2\nn\0\0\4\0\5\0\f6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\3\0B\1\2\0016\1\0\0'\3\4\0B\1\2\0029\1\2\1B\1\1\1K\0\1\0\15mini.icons\1\0\1\14use_icons\2\nsetup\20mini.statusline\frequire\0", "config", "mini.nvim")
-time([[Config for mini.nvim]], false)
--- Config for: tokyonight.nvim
-time([[Config for tokyonight.nvim]], true)
-try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\27colorscheme tokyonight\bcmd\bvim\0", "config", "tokyonight.nvim")
-time([[Config for tokyonight.nvim]], false)
--- Config for: nvim-asciidoc-preview
-time([[Config for nvim-asciidoc-preview]], true)
-try_loadstring("\27LJ\2\nB\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\21asciidoc-preview\frequire\0", "config", "nvim-asciidoc-preview")
-time([[Config for nvim-asciidoc-preview]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
+-- Config for: tokyonight.nvim
+time([[Config for tokyonight.nvim]], true)
+try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\27colorscheme tokyonight\bcmd\bvim\0", "config", "tokyonight.nvim")
+time([[Config for tokyonight.nvim]], false)
+-- Config for: mini.nvim
+time([[Config for mini.nvim]], true)
+try_loadstring("\27LJ\2\nn\0\0\4\0\5\0\f6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\3\0B\1\2\0016\1\0\0'\3\4\0B\1\2\0029\1\2\1B\1\1\1K\0\1\0\15mini.icons\1\0\1\14use_icons\2\nsetup\20mini.statusline\frequire\0", "config", "mini.nvim")
+time([[Config for mini.nvim]], false)
+-- Config for: nvim-asciidoc-preview
+time([[Config for nvim-asciidoc-preview]], true)
+try_loadstring("\27LJ\2\nB\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\21asciidoc-preview\frequire\0", "config", "nvim-asciidoc-preview")
+time([[Config for nvim-asciidoc-preview]], false)
 -- Config for: oil.nvim
 time([[Config for oil.nvim]], true)
 try_loadstring("\27LJ\2\n1\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\boil\frequire\0", "config", "oil.nvim")
