@@ -22,6 +22,7 @@ JAVA_HOME=$JAVA11_AMAZON
 
 cd $PROCESSTECH/runawfe-professional-server/wfe-app && \
 # /opt/apache-maven-3.9.6/bin/mvn clean package -P spa -DskipTests && \
+# mvn clean package -P push -Dmaven.test.skip=$SKIP_TESTS && \
 mvn clean package -P spa -Dmaven.test.skip=$SKIP_TESTS && \
 cp "$ear_path" "$target_path" && \
 (print_success || print_fail) && \

@@ -35,3 +35,5 @@ vim.keymap.set('i', '<CR>', function()
   return vim.fn.pumvisible() ~= 0 and '<C-y>' or '<CR>'
 end, { expr = true })
 
+-- align by symbol
+vim.keymap.set('x', 'aa', '<Plug>(EasyAlign)', { remap = true })

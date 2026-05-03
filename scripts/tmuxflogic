@@ -3,7 +3,7 @@
 tmux rename-window build && \
 tmux new-window -c $RTSOFT/4diac-ide -n git && \
 tmux new-window -c $RTSOFT/4diac-ide-doc -n gitWiki && \
-tmux new-window -c $MY_GITHUB/rtsoftTasks/x86_64-linux-musl -n rt && \
+tmux new-window -c /opt/flogic -n rt && \
 tmux new-window -c $MY_GITHUB/rtsoftTasks -n tasks && \
 tmux new-window -c $MY_GITHUB/dotfiles -n dot && \
 tmux select-window -t2
