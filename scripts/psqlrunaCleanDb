@@ -1,17 +1,11 @@
 #!/bin/bash
 
-psql -h localhost -p 5432 -U postgres -c "DROP DATABASE IF EXISTS \"runawfe\";"
+psql -h localhost -p 5432 -U postgres \
+  -c "DROP DATABASE IF EXISTS \"runawfe\";" \
+  -c "CREATE DATABASE \"runawfe\";"
 
 if [ $? -eq 0 ]; then
-    echo "✅ Database dropped successfully."
+    echo "✅ Database recreated successfully."
 else
-    echo "❌ Error: Failed."
-fi
-
-psql -h localhost -p 5432 -U postgres -c "CREATE DATABASE \"runawfe\";"
-
-if [ $? -eq 0 ]; then
-    echo "✅ Database created successfully."
-else
-    echo "❌ Error: Failed to create database."
+    echo "❌ Error: Failed to recreate database."
 fi
