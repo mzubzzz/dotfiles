@@ -3,6 +3,21 @@ require("mzubzzz.set")
 require("mzubzzz.packer")
 
 -- GO
+vim.lsp.config('gopls', {
+  cmd = { 'gopls' },
+  filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
+  -- This tells Neovim how to find the project root directory
+  root_pattern = { 'go.work', 'go.mod', '.git' },
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+        shadow = true,
+      },
+      staticcheck = true,
+    },
+  },
+})
 vim.lsp.enable('gopls')
 
 -- LUA
